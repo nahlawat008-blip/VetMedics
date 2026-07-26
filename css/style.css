@@ -186,3 +186,40 @@ footer{
     text-align:center;
     padding:30px;
 }
+/* Floating WhatsApp */
+
+.floating-whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+z-index:9999;
+}
+
+/* Back To Top */
+
+.top-btn{
+position:fixed;
+left:20px;
+bottom:20px;
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#0f9d58;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+display:none;
+z-index:9999;
+}
