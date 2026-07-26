@@ -1,0 +1,114 @@
+/* ============ Tablet ============ */
+
+@media (max-width:992px){
+
+header .container{
+flex-direction:column;
+padding:15px;
+}
+
+nav{
+margin:15px 0;
+}
+
+nav ul{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
+/* ============ Mobile ============ */
+
+@media (max-width:768px){
+
+.container{
+width:92%;
+}
+
+header{
+position:relative;
+}
+
+nav ul{
+flex-direction:column;
+text-align:center;
+gap:15px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:10px;
+}
+
+.hero{
+height:85vh;
+padding:20px;
+}
+
+.hero h1{
+font-size:32px;
+line-height:1.3;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.btn{
+padding:14px 28px;
+font-size:15px;
+}
+
+section{
+padding:60px 0;
+}
+
+section h2{
+font-size:30px;
+}
+
+.service-box{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:25px;
+}
+
+.call-btn{
+display:none;
+}
+
+}
+
+/* ============ Small Mobile ============ */
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:27px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.logo h2{
+font-size:24px;
+}
+
+section h2{
+font-size:26px;
+}
+
+}
