@@ -4,7 +4,7 @@
 
 header .container{
 display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
@@ -18,7 +18,7 @@ margin:15px 0;
 
 nav ul{
 dusplay:flex;
-  flex-direction:roe;
+  flex-direction:column;
 justify-content:center;
   align-items:center;
   flex-wrap:wrap;
