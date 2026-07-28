@@ -65,3 +65,37 @@ topBtn.onclick = () => {
         behavior: "smooth"
     });
 };
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const value = this.value.toLowerCase();
+
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+
+        if (section.innerText.toLowerCase().includes(value)) {
+
+            section.style.display = "block";
+
+        } else {
+
+            section.style.display = "none";
+
+        }
+
+    });
+
+    if (value === "") {
+
+        sections.forEach(section => {
+
+            section.style.display = "block";
+
+        });
+
+    }
+
+});
