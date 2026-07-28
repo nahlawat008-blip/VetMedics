@@ -254,6 +254,14 @@ z-index:9999;
     align-items:center;
     gap:12px;
     text-decoration:none;
+   flex-shrink=0;
+}
+
+.nav-links{
+   display:flex;
+   align-items:center;
+   gap:30px
+      margin-left:auto;
 }
 
 .logo img{
