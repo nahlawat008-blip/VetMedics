@@ -678,6 +678,13 @@ color:#222;
 
 }
 
+.service-grid{
+   display:grid;
+   grid-template-column:repeat(3,1fr);
+   gap:30px;
+   margin-top:50px;
+}
+
 .service-card{
 background:#fff;
 border-radius:25px;
