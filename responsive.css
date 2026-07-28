@@ -124,3 +124,86 @@ font-size:26px;
 }
 
 }
+
+/*================ RESPONSIVE =================*/
+
+@media (max-width:992px){
+
+.hero-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-left,
+.hero-right{
+    width:100%;
+}
+
+.hero-right img{
+    max-width:380px;
+    width:100%;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.search-box{
+    max-width:100%;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero{
+    padding:120px 20px 60px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.btn-primary,
+.btn-secondary{
+    width:100%;
+    justify-content:center;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.search-box input{
+    font-size:15px;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+    font-size:28px;
+}
+
+.hero-tag{
+    font-size:13px;
+}
+
+.hero-right img{
+    max-width:280px;
+}
+
+}
