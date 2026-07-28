@@ -84,10 +84,39 @@ Home Visits • Vaccination • Surgery • Grooming • Lab Test • Emergency 
 
         <i class="fas fa-search"></i>
 
-        <input
-            type="text"
-            placeholder="Search Vaccination,Grooming,Surgery..."
-            >
+        <script>
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const value = this.value.toLowerCase();
+
+    if(value.includes("vaccination")){
+        location.href="#vaccination";
+    }
+
+    if(value.includes("grooming")){
+        location.href="#grooming";
+    }
+
+    if(value.includes("lab")){
+        location.href="#lab";
+    }
+
+    if(value.includes("about")){
+        location.href="#about";
+    }
+
+    if(value.includes("gallery")){
+        location.href="#gallery";
+    }
+
+    if(value.includes("contact")){
+        location.href="#contact";
+    }
+
+});
+</script>
 
     </div>
 
