@@ -298,7 +298,7 @@ z-index:9999;
 
 .nav-links a:hover,
 .nav-links a.active{
-    color:#6A38C2;
+    color:#0F9D8A;
 }
 
 .nav-links a::after{
@@ -324,7 +324,7 @@ z-index:9999;
 
 .call-btn{
     padding:12px 24px;
-    background:#6A38C2;
+    background:#16A34A;
     color:#fff;
     border-radius:40px;
     text-decoration:none;
@@ -332,7 +332,7 @@ z-index:9999;
 }
 
 .call-btn:hover{
-    background:#4B2E83;
+    background:#0F9D8A;
 }
 
 .whatsapp-btn{
@@ -479,7 +479,7 @@ margin-bottom:35px;
 }
 
 .btn-primary{
-    background:linear-gradient(135deg,#6A38C2,#8B5CF6);
+    background:linear-gradient(135deg,#16A34A,#0F9D8A);
     color:#fff;
     box-shadow:0 12px 30px rgba(106,56,194,.35);
 }
@@ -491,12 +491,12 @@ margin-bottom:35px;
 
 .btn-secondary{
     background:#fff;
-    color:#6A38C2;
-    border:2px solid #6A38C2;
+    color:#0F9D8A;
+    border:2px solid #0F9D8A;
 }
 
 .btn-secondary:hover{
-    background:#6A38C2;
+    background:#0F9D8A;
     color:#fff;
     transform:translateY(-4px);
 }
@@ -730,7 +730,7 @@ margin-bottom:22px;
 .service-card a{
 display:inline-block;
 padding:12px 28px;
-background:#6A38C2;
+background:#16A34A;
 color:#fff;
 border-radius:40px;
 text-decoration:none;
@@ -739,7 +739,7 @@ transition:.3s;
 }
 
 .service-card a:hover{
-background:#0F9D58;
+background:#0F9D8A;
 }
 
 }
