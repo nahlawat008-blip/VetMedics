@@ -688,6 +688,9 @@ color:#222;
 }
 
 .service-card{
+   position: relative;
+   overflow: hidden;
+   
 background:#fff;
 border-radius:25px;
 padding:30px;
