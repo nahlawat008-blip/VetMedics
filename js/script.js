@@ -70,32 +70,28 @@ const searchInput = document.getElementById("searchInput");
 
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener("keyup", function(e){
+searchInput.addEventListener("keydown", function(e){
 
     if(e.key !== "Enter") return;
 
+    e.preventDefault();
+
     const value = this.value.trim().toLowerCase();
 
-    const sections = document.querySelectorAll("section");
-
-    let found = false;
-
-    sections.forEach(section => {
-
-        if(section.innerText.toLowerCase().includes(value)){
-
-            section.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-
-            found = true;
-        }
-
-    });
-
-    if(!found){
-        alert("No result found");
+    if(value === "services"){
+        document.getElementById("services").scrollIntoView({behavior:"smooth"});
+    }
+    else if(value === "about"){
+        document.getElementById("about").scrollIntoView({behavior:"smooth"});
+    }
+    else if(value === "gallery"){
+        document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
+    }
+    else if(value === "contact"){
+        document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    }
+    else{
+        alert("Search result not found");
     }
 
 });
