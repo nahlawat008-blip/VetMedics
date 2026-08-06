@@ -68,33 +68,37 @@ topBtn.onclick = () => {
 
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener("keyup", function () {
+const searchInput = document.getElementById("searchInput");
 
-    const value = this.value.toLowerCase();
+searchInput.addEventListener("keyup", function(e){
+
+    if(e.key !== "Enter") return;
+
+    const value = this.value.trim().toLowerCase();
 
     const sections = document.querySelectorAll("section");
 
+    let found = false;
+
     sections.forEach(section => {
 
-        if (section.innerText.toLowerCase().includes(value)) {
+        if(section.innerText.toLowerCase().includes(value)){
 
-            section.style.display = "block";
+            section.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
 
-        } else {
-
-            section.style.display = "none";
-
+            found = true;
         }
 
     });
 
-    if (value === "") {
+    if(!found){
+        alert("No result found");
+    }
 
-        sections.forEach(section => {
-
-            section.style.display = "block";
-
-        });
+});
 
     }
 
