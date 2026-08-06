@@ -70,31 +70,28 @@ const searchInput = document.getElementById("searchInput");
 
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener("keydown", function(e){
+searchInput.addEventListener("keyup", function () {
 
-    if(e.key !== "Enter") return;
+    const value = this.value.toLowerCase();
 
-    e.preventDefault();
+    const sections = document.querySelectorAll("section");
 
-    const value = this.value.trim().toLowerCase();
+    sections.forEach(section => {
 
-    if(value === "services"){
-        document.getElementById("services").scrollIntoView({behavior:"smooth"});
-    }
-    else if(value === "about"){
-        document.getElementById("about").scrollIntoView({behavior:"smooth"});
-    }
-    else if(value === "gallery"){
-        document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
-    }
-    else if(value === "contact"){
-        document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-    }
-    else{
-        alert("Search result not found");
-    }
+        if(section.innerText.toLowerCase().includes(value)){
+
+            section.style.display = "block";
+
+        } else {
+
+            section.style.display = "block"; // <-- yahan none ki jagah block kar de
+
+        }
+
+    });
 
 });
+
 
     }
 
