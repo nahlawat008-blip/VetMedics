@@ -232,10 +232,6 @@ our mission is Compassion With Care.
 
 <p>📍 Gurgaon & Delhi NCR</p>
 
-<a href="https://wa.me/919817040859" class="btn">
-
-Chat on WhatsApp
-
 </a>
 
 </div>
@@ -257,6 +253,115 @@ Compassion With Care
 </p>
 
 </footer>
+
+    <!-- ================= VACCINATION PACKAGES ================= -->
+
+<div id="vaccinationPackages" class="package-overlay">
+
+    <div class="package-modal">
+
+        <button class="close-package" onclick="closeVaccinationPackages()">
+            ×
+        </button>
+
+        <h2>Vaccination Packages</h2>
+
+        <p class="package-subtitle">
+            Choose the right vaccination package for your pet
+        </p>
+
+        <div class="package-grid">
+
+            <!-- Puppy -->
+            <div class="package-card"
+                 onclick="showPackageDetails('puppy')">
+
+                <span class="package-icon">🐶</span>
+
+                <h3>Puppy Vaccination</h3>
+
+                <p>
+                    Complete vaccination plan for puppies.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+
+            <!-- Adult Dog -->
+            <div class="package-card"
+                 onclick="showPackageDetails('adultDog')">
+
+                <span class="package-icon">🐕</span>
+
+                <h3>Adult Dog Vaccination</h3>
+
+                <p>
+                    Essential annual vaccination for adult dogs.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+
+            <!-- Kitten -->
+            <div class="package-card"
+                 onclick="showPackageDetails('kitten')">
+
+                <span class="package-icon">🐱</span>
+
+                <h3>Kitten Vaccination</h3>
+
+                <p>
+                    Complete vaccination plan for kittens.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+
+            <!-- Adult Cat -->
+            <div class="package-card"
+                 onclick="showPackageDetails('adultCat')">
+
+                <span class="package-icon">🐈</span>
+
+                <h3>Adult Cat Vaccination</h3>
+
+                <p>
+                    Essential vaccination for adult cats.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PACKAGE DETAILS ================= -->
+
+<div id="packageDetails" class="package-overlay">
+
+    <div class="detail-modal">
+
+        <button class="close-package"
+                onclick="closePackageDetails()">
+            ×
+        </button>
+
+        <div id="packageDetailContent"></div>
+
+    </div>
+
+</div>
 
 <script src="js/script.js"></script>
 
