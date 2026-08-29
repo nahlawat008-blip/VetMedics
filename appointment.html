@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | VetMedics</title>
+
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="responsive.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7fffc;
+        }
+
+        .appointment-page {
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .appointment-container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #0F9D8A;
+            font-weight: 600;
+        }
+
+        .appointment-container h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .appointment-container p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0F9D8A;
+        }
+
+        .appointment-submit {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #0F9D8A;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .appointment-submit:hover {
+            opacity: 0.9;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #e8f8f4;
+            color: #0F9D8A;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+
+            .appointment-page {
+                padding: 25px 15px;
+            }
+
+            .appointment-container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="appointment-page">
+
+        <div class="appointment-container">
+
+            <a href="index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+            <h1>Book an Appointment</h1>
+
+            <p>
+                Please fill in your details to register your appointment.
+            </p>
+
+            <form id="appointmentForm">
+
+                <div class="form-group">
+
+                    <label for="ownerName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ownerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phoneNumber">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        placeholder="Enter 10 digit phone number"
+                        maxlength="10"
+                        pattern="[0-9]{10}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="petName">
+                        Pet Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="petName"
+                        placeholder="Enter your pet's name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="serviceType">
+                        Type of Service
+                    </label>
+
+                    <select id="serviceType" required>
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option value="Vaccination">
+                            Vaccination
+                        </option>
+
+                        <option value="Home Visit">
+                            Home Visit
+                        </option>
+
+                        <option value="Grooming">
+                            Grooming
+                        </option>
+
+                        <option value="Health Checkup">
+                            Health Checkup
+                        </option>
+
+                        <option value="Surgery">
+                            Surgery
+                        </option>
+
+                        <option value="Lab Test">
+                            Lab Test
+                        </option>
+
+                        <option value="Teleconsultation">
+                            Teleconsultation
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="appointment-submit"
+                >
+                    Submit Appointment
+                </button>
+
+            </form>
+
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                ✅ Appointment registered successfully!
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
