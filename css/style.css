@@ -966,3 +966,260 @@ color:#0F9D8A;
         padding:10px 16px;
     }
 }
+
+/* ================= VACCINATION PACKAGES ================= */
+
+.vaccination-card {
+    cursor: pointer;
+}
+
+.view-package-btn {
+    border: none;
+    padding: 12px 25px;
+    background: #16A34A;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.view-package-btn:hover {
+    background: #0F9D8A;
+    transform: scale(1.05);
+}
+
+
+/* Overlay */
+
+.package-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* Main Package Box */
+
+.package-modal {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 25px;
+    padding: 40px;
+
+    position: relative;
+
+    animation: packagePop 0.3s ease;
+}
+
+@keyframes packagePop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Close Button */
+
+.close-package {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    color: #333;
+}
+
+.close-package:hover {
+    background: #16A34A;
+    color: white;
+}
+
+
+/* Heading */
+
+.package-modal h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.package-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* Package Grid */
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* Package Card */
+
+.package-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+
+    padding: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    text-align: center;
+
+    background: #fff;
+}
+
+.package-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+
+    border-color: #16A34A;
+}
+
+.package-icon {
+    font-size: 45px;
+}
+
+.package-card h3 {
+    margin: 12px 0 8px;
+    color: #222;
+}
+
+.package-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.package-card strong {
+    color: #16A34A;
+}
+
+
+/* Details Modal */
+
+.detail-modal {
+    background: white;
+
+    width: 90%;
+    max-width: 600px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    position: relative;
+
+    animation: packagePop 0.3s ease;
+}
+
+.detail-modal h2 {
+    color: #16A34A;
+    margin-bottom: 20px;
+}
+
+.detail-modal h3 {
+    margin-top: 20px;
+    color: #222;
+}
+
+.detail-modal ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.package-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #16A34A;
+
+    margin: 20px 0;
+}
+
+.book-package-btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background: #16A34A;
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.book-package-btn:hover {
+    background: #0F9D8A;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .package-modal {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .package-modal h2 {
+        font-size: 25px;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-modal {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+}
