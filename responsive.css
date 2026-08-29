@@ -8,10 +8,6 @@
 width:92%;
 }
 
-header{
-position:relative;
-}
-
 nav ul{
 flex-direction:column;
 text-align:center;
