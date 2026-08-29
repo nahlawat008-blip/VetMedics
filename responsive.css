@@ -231,3 +231,47 @@ font-size:26px;
         font-size:11px;
     }
 }
+
+@media (max-width: 768px){
+
+    header .container{
+        padding:10px 0;
+    }
+
+    .nav-container{
+        flex-wrap:wrap;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+        gap:15px;
+        order:3;
+        flex-wrap:wrap;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+
+    .nav-buttons{
+        gap:6px;
+    }
+
+    .call-btn{
+        display:none;
+    }
+
+    .whatsapp-btn{
+        width:38px;
+        height:38px;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    .logo span{
+        font-size:11px;
+    }
+}
