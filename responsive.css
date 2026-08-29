@@ -1,44 +1,5 @@
 /* ============ Tablet ============ */
 
-@media (max-width:992px){
-
-header .container{
-display:flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
-  text-align:center;
-}
-
-nav{
-margin:15px 0;
-}
-
-nav ul{
-display:flex;
-  flex-direction:row;
-justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:18px;
-}
-
-  nav ul li a{
-    font-size:14px;
-  }
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-}
-
 /* ============ Mobile ============ */
 
 @media (max-width:768px){
