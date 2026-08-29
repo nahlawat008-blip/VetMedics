@@ -944,3 +944,22 @@ color:#0F9D8A;
         min-height:auto;
     }
 }
+
+@media (max-width: 1100px){
+
+    .nav-links{
+        gap:15px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .call-btn{
+        padding:10px 16px;
+    }
+}
