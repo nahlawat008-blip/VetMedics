@@ -45,7 +45,8 @@ header .container{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 0;
+    gap:20px;
+    padding:12px 0;
 }
 
 .logo h2{
@@ -57,6 +58,43 @@ header .container{
 .logo span{
     color:#666;
     font-size:14px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    white-space:nowrap;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#0f9d58;
+}
+
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.whatsapp-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
 }
 
 nav ul{
