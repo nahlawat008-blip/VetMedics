@@ -1223,3 +1223,83 @@ color:#0F9D8A;
     }
 
 }
+
+/* =========================
+   APPOINTMENT FORM
+========================= */
+
+.appointment-section {
+    padding: 80px 20px;
+    background: #f8fffd;
+}
+
+.appointment-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0F9D8A;
+}
+
+.appointment-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #0F9D8A;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.appointment-submit:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+
+    .appointment-section {
+        padding: 60px 15px;
+    }
+
+    .appointment-form {
+        padding: 25px 20px;
+    }
+
+}
