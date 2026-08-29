@@ -66,31 +66,77 @@ topBtn.onclick = () => {
     });
 };
 
-const searchInput = document.getElementById("searchInput");
+// ================= SEARCH SERVICES =================
 
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+const serviceCards = document.querySelectorAll('.service-card');
 
-searchInput.addEventListener("keyup", function () {
+function searchServices() {
 
-    const value = this.value.toLowerCase();
+    const value = searchInput.value.trim().toLowerCase();
 
-    const sections = document.querySelectorAll("section");
+    let found = 0;
 
-    sections.forEach(section => {
+    serviceCards.forEach(card => {
 
-        if(section.innerText.toLowerCase().includes(value)){
+        const text = card.innerText.toLowerCase();
 
-            section.style.display = "block";
-
+        if (value === '' || text.includes(value)) {
+            card.style.display = '';
+            found++;
         } else {
-
-            section.style.display = "block"; // <-- yahan none ki jagah block kar de
-
+            card.style.display = 'none';
         }
 
     });
 
-});
+    let noResult = document.getElementById('noSearchResult');
+
+    if (!noResult) {
+
+        noResult = document.createElement('p');
+
+        noResult.id = 'noSearchResult';
+
+        noResult.textContent =
+            'No matching service found. Try Vaccination, Grooming or Surgery.';
+
+        noResult.style.cssText =
+            'display:none;text-align:center;margin:25px 0;color:#666;font-weight:500;';
+
+        document.querySelector('.service-grid').after(noResult);
+    }
+
+    if (value !== '' && found === 0) {
+        noResult.style.display = 'block';
+    } else {
+        noResult.style.display = 'none';
+    }
+
+    if (value !== '') {
+        document.getElementById('services').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+}
+
+if (searchBtn) {
+    searchBtn.addEventListener('click', searchServices);
+}
+
+if (searchInput) {
+
+    searchInput.addEventListener('input', searchServices);
+
+    searchInput.addEventListener('keydown', function(e) {
+
+        if (e.key === 'Enter') {
+            searchServices();
+        }
+
+    });
+}
 
 
     }
