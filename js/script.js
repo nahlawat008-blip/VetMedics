@@ -137,3 +137,212 @@ if (searchInput) {
 
     });
 }
+
+// ================= VACCINATION PACKAGES =================
+
+function openVaccinationPackages() {
+
+    const modal = document.getElementById("vaccinationPackages");
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeVaccinationPackages() {
+
+    const modal = document.getElementById("vaccinationPackages");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// ================= PACKAGE DETAILS =================
+
+function showPackageDetails(packageType) {
+
+    const detailModal = document.getElementById("packageDetails");
+
+    const content = document.getElementById("packageDetailContent");
+
+    let html = "";
+
+
+    if (packageType === "puppy") {
+
+        html = `
+            <h2>🐶 Puppy Vaccination Package</h2>
+
+            <h3>Package Includes</h3>
+
+            <ul>
+                <li>Core puppy vaccination schedule</li>
+                <li>Age-wise vaccination guidance</li>
+                <li>Veterinary consultation</li>
+                <li>Vaccination record update</li>
+                <li>Follow-up vaccination reminder</li>
+            </ul>
+
+            <h3>Recommended For</h3>
+
+            <p>
+                Puppies requiring their initial vaccination series.
+            </p>
+
+            <div class="package-price">
+                Starting from ₹____
+            </div>
+
+            <a href="#appointment"
+               class="book-package-btn"
+               onclick="closePackageDetails()">
+                Book This Package
+            </a>
+        `;
+
+    }
+
+
+    else if (packageType === "adultDog") {
+
+        html = `
+            <h2>🐕 Adult Dog Vaccination Package</h2>
+
+            <h3>Package Includes</h3>
+
+            <ul>
+                <li>Annual vaccination consultation</li>
+                <li>Required booster vaccination</li>
+                <li>Veterinary health assessment</li>
+                <li>Vaccination record update</li>
+                <li>Next due-date reminder</li>
+            </ul>
+
+            <h3>Recommended For</h3>
+
+            <p>
+                Adult dogs requiring regular booster vaccination.
+            </p>
+
+            <div class="package-price">
+                Starting from ₹____
+            </div>
+
+            <a href="#appointment"
+               class="book-package-btn"
+               onclick="closePackageDetails()">
+                Book This Package
+            </a>
+        `;
+
+    }
+
+
+    else if (packageType === "kitten") {
+
+        html = `
+            <h2>🐱 Kitten Vaccination Package</h2>
+
+            <h3>Package Includes</h3>
+
+            <ul>
+                <li>Kitten vaccination schedule</li>
+                <li>Age-wise vaccination guidance</li>
+                <li>Veterinary consultation</li>
+                <li>Vaccination record update</li>
+                <li>Follow-up reminder</li>
+            </ul>
+
+            <h3>Recommended For</h3>
+
+            <p>
+                Kittens requiring their initial vaccination series.
+            </p>
+
+            <div class="package-price">
+                Starting from ₹____
+            </div>
+
+            <a href="#appointment"
+               class="book-package-btn"
+               onclick="closePackageDetails()">
+                Book This Package
+            </a>
+        `;
+
+    }
+
+
+    else if (packageType === "adultCat") {
+
+        html = `
+            <h2>🐈 Adult Cat Vaccination Package</h2>
+
+            <h3>Package Includes</h3>
+
+            <ul>
+                <li>Annual vaccination consultation</li>
+                <li>Required booster vaccination</li>
+                <li>Veterinary health assessment</li>
+                <li>Vaccination record update</li>
+                <li>Next due-date reminder</li>
+            </ul>
+
+            <h3>Recommended For</h3>
+
+            <p>
+                Adult cats requiring regular vaccination and boosters.
+            </p>
+
+            <div class="package-price">
+                Starting from ₹____
+            </div>
+
+            <a href="#appointment"
+               class="book-package-btn"
+               onclick="closePackageDetails()">
+                Book This Package
+            </a>
+        `;
+
+    }
+
+
+    content.innerHTML = html;
+
+    detailModal.style.display = "flex";
+
+}
+
+
+function closePackageDetails() {
+
+    const modal = document.getElementById("packageDetails");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// Close when clicking outside the box
+
+document.getElementById("vaccinationPackages").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeVaccinationPackages();
+    }
+
+});
+
+
+document.getElementById("packageDetails").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closePackageDetails();
+    }
+
+});
