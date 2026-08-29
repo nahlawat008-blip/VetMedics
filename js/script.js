@@ -346,3 +346,38 @@ document.getElementById("packageDetails").addEventListener("click", function(e) 
     }
 
 });
+
+// =========================
+// BOOK APPOINTMENT
+// =========================
+
+const appointmentForm = document.getElementById("appointmentForm");
+
+if (appointmentForm) {
+
+    appointmentForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const ownerName = document.getElementById("ownerName").value.trim();
+        const phoneNumber = document.getElementById("phoneNumber").value.trim();
+        const petName = document.getElementById("petName").value.trim();
+        const serviceType = document.getElementById("serviceType").value;
+
+        const message =
+`🐾 New Appointment Request
+
+👤 Owner Name: ${ownerName}
+📱 Phone Number: ${phoneNumber}
+🐶 Pet Name: ${petName}
+🩺 Service Required: ${serviceType}`;
+
+        const whatsappURL =
+            "https://wa.me/919817040859?text=" +
+            encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+}
