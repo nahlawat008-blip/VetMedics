@@ -586,9 +586,9 @@ margin:35px 0;
 
 background:#fff;
 
-border-radius:60px;
+border-radius:22px;
 
-padding:8px;
+padding:8px 10px 8px 18px;
 
 display:flex;
 
@@ -598,29 +598,33 @@ box-shadow:0 10px 30px rgba(0,0,0,.10);
 
 max-width:650px;
 
+   width:100%;
+
 }
 
 .search-box i{
 
-font-size:22px;
+font-size:20px;
 
 color:#6a38c2;
 
-padding:0 18px;
+padding:0 12px 0 5px;
 
 }
 
 .search-box input{
 
-width:100%;
+   flex:1;
+   
+min-width:0;
 
 border:none;
 
 outline:none;
 
-font-size:18px;
+font-size:15px;
 
-padding:15px 10px;
+padding:15px 8px;
 
 background:transparent;
 
@@ -628,30 +632,47 @@ font-family:'Poppins',sans-serif;
 
 }
 
-.search-box:hover{
 
-box-shadow:0 15px 35px rgba(106,56,194,.20);
+.search-box button{
+    border:none;
+    background:#6233c4;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:18px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
 
-transform:translateY(-2px);
-
-transition:.3s;
-
+.search-box button:hover{
+    background:#4f25aa;
+    transform:translateY(-1px);
 }
 
 @media(max-width:768px){
 
-.search-box{
+    .search-box{
+        margin:25px 0;
+        padding:6px 7px 6px 12px;
+        border-radius:18px;
+    }
 
-max-width:100%;
+    .search-box i{
+        font-size:18px;
+        padding-right:7px;
+    }
 
-}
+    .search-box input{
+        font-size:12px;
+        padding:13px 5px;
+    }
 
-.search-box input{
-
-font-size:16px;
-
-}
-
+    .search-box button{
+        padding:12px 17px;
+        border-radius:14px;
+        font-size:11px;
+    }
 }
 
 /*================ SERVICES =================*/
