@@ -654,3 +654,32 @@ document.getElementById("homeVisitDetails")
         }
 
     });
+
+/* ================= PET PARENT LOCATION ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const locationElement = document.getElementById("user-location");
+
+    if (!locationElement) return;
+
+    if (!navigator.geolocation) {
+        locationElement.textContent = "Location unavailable";
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            locationElement.textContent =
+                `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
+
+        },
+        function () {
+            locationElement.textContent = "Location unavailable";
+        }
+    );
+});
