@@ -372,4 +372,116 @@ Compassion With Care
 
 </body>
 
+    <!-- Teleconsultation Modal -->
+<div id="teleconsultationModal" class="package-modal">
+
+    <div class="package-modal-content">
+
+        <span class="close-package" onclick="closeTeleconsultation()">
+            &times;
+        </span>
+
+        <h2>Teleconsultation</h2>
+
+        <p class="package-subtitle">
+            Choose the consultation option that suits your pet's needs.
+        </p>
+
+        <div class="package-grid">
+
+            <!-- Video Consultation -->
+            <div class="package-card">
+
+                <div class="package-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+
+                <h3>Video Consultation</h3>
+
+                <p>
+                    Consult with our veterinarian through a live video call
+                    for assessment and guidance regarding your pet's health.
+                </p>
+
+                <div class="package-price">
+                    ₹—
+                </div>
+
+                <button onclick="showTeleDetails('video')">
+                    View Details
+                </button>
+
+            </div>
+
+
+            <!-- Phone Consultation -->
+            <div class="package-card">
+
+                <div class="package-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+
+                <h3>Phone Consultation</h3>
+
+                <p>
+                    Speak directly with our veterinarian over a phone call
+                    for veterinary advice and guidance.
+                </p>
+
+                <div class="package-price">
+                    ₹—
+                </div>
+
+                <button onclick="showTeleDetails('phone')">
+                    View Details
+                </button>
+
+            </div>
+
+
+            <!-- Follow-up Consultation -->
+            <div class="package-card">
+
+                <div class="package-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+
+                <h3>Follow-up Consultation</h3>
+
+                <p>
+                    Follow-up consultation to monitor your pet's progress
+                    after the initial consultation or treatment.
+                </p>
+
+                <div class="package-price">
+                    ₹—
+                </div>
+
+                <button onclick="showTeleDetails('followup')">
+                    View Details
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Teleconsultation Details Modal -->
+<div id="teleDetailsModal" class="package-modal">
+
+    <div class="package-modal-content details-content">
+
+        <span class="close-package" onclick="closeTeleDetails()">
+            &times;
+        </span>
+
+        <div id="teleDetails"></div>
+
+    </div>
+
+</div>
 </html>
