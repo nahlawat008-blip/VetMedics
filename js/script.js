@@ -347,53 +347,65 @@ document.getElementById("packageDetails").addEventListener("click", function(e) 
 
 });
 
-// ================================
-// TELECONSULTATION
-// ================================
+// ================= TELECONSULTATION PACKAGES =================
 
-function openTeleconsultation() {
-    document.getElementById("teleconsultationModal").style.display = "flex";
-}
+function openTeleconsultationPackages() {
 
-function closeTeleconsultation() {
-    document.getElementById("teleconsultationModal").style.display = "none";
-}
+    const modal = document.getElementById("teleconsultationPackages");
 
-function closeTeleDetails() {
-    document.getElementById("teleDetailsModal").style.display = "none";
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
 }
 
 
-function showTeleDetails(type) {
+function closeTeleconsultationPackages() {
 
-    const details = document.getElementById("teleDetails");
+    const modal = document.getElementById("teleconsultationPackages");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// ================= TELECONSULTATION DETAILS =================
+
+function showTeleconsultationDetails(type) {
+
+    const detailModal =
+        document.getElementById("teleconsultationDetails");
+
+    const content =
+        document.getElementById("teleconsultationDetailContent");
+
+    let html = "";
+
 
     if (type === "video") {
 
-        details.innerHTML = `
-            <div class="details-icon">
-                <i class="fas fa-video"></i>
-            </div>
+        html = `
+            <h2>📹 Video Consultation</h2>
 
-            <h2>Video Consultation</h2>
-
-            <p>
-                Get veterinary consultation through a live video call.
-                Our veterinarian can discuss your pet's symptoms,
-                medical history and provide appropriate guidance.
-            </p>
-
-            <h4>Suitable for:</h4>
+            <h3>Consultation Includes</h3>
 
             <ul>
-                <li>General health concerns</li>
-                <li>Skin and minor health problems</li>
-                <li>Diet and nutrition advice</li>
-                <li>Post-treatment guidance</li>
+                <li>Live video consultation with veterinarian</li>
+                <li>Discussion of your pet's symptoms</li>
+                <li>Basic health guidance</li>
+                <li>Medication and care guidance</li>
+                <li>Further treatment advice if required</li>
             </ul>
 
-            <div class="details-price">
-                Price: ₹—
+            <h3>Recommended For</h3>
+
+            <p>
+                Pet owners who want to discuss their pet's health
+                with a veterinarian through a video call.
+            </p>
+
+            <div class="package-price">
+                Price: ₹____
             </div>
         `;
 
@@ -402,29 +414,28 @@ function showTeleDetails(type) {
 
     else if (type === "phone") {
 
-        details.innerHTML = `
-            <div class="details-icon">
-                <i class="fas fa-phone"></i>
-            </div>
+        html = `
+            <h2>📞 Phone Consultation</h2>
 
-            <h2>Phone Consultation</h2>
-
-            <p>
-                Talk directly with our veterinarian over a phone call
-                and get professional advice regarding your pet's health.
-            </p>
-
-            <h4>Suitable for:</h4>
+            <h3>Consultation Includes</h3>
 
             <ul>
+                <li>Direct phone consultation with veterinarian</li>
+                <li>Discussion of health concerns</li>
                 <li>General veterinary advice</li>
-                <li>Medication guidance</li>
-                <li>Diet and care advice</li>
-                <li>Initial assessment of health concerns</li>
+                <li>Medication and care guidance</li>
+                <li>Further treatment advice if required</li>
             </ul>
 
-            <div class="details-price">
-                Price: ₹—
+            <h3>Recommended For</h3>
+
+            <p>
+                Pet owners who prefer a convenient veterinary
+                consultation over the phone.
+            </p>
+
+            <div class="package-price">
+                Price: ₹____
             </div>
         `;
 
@@ -433,53 +444,70 @@ function showTeleDetails(type) {
 
     else if (type === "followup") {
 
-        details.innerHTML = `
-            <div class="details-icon">
-                <i class="fas fa-sync-alt"></i>
-            </div>
+        html = `
+            <h2>🔄 Follow-up Consultation</h2>
 
-            <h2>Follow-up Consultation</h2>
-
-            <p>
-                Continue your pet's treatment and monitor recovery
-                with a follow-up consultation from our veterinarian.
-            </p>
-
-            <h4>Suitable for:</h4>
+            <h3>Consultation Includes</h3>
 
             <ul>
-                <li>Monitoring treatment progress</li>
-                <li>Post-treatment follow-up</li>
-                <li>Review of previously discussed problems</li>
-                <li>Further care and medication guidance</li>
+                <li>Follow-up with the veterinarian</li>
+                <li>Review of treatment progress</li>
+                <li>Discussion of recovery</li>
+                <li>Medication guidance</li>
+                <li>Further care recommendations</li>
             </ul>
 
-            <div class="details-price">
-                Price: ₹—
+            <h3>Recommended For</h3>
+
+            <p>
+                Pets who have already had a consultation or treatment
+                and require follow-up advice.
+            </p>
+
+            <div class="package-price">
+                Price: ₹____
             </div>
         `;
 
     }
 
-    document.getElementById("teleDetailsModal").style.display = "flex";
+
+    content.innerHTML = html;
+
+    detailModal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
 }
 
 
-// Close when clicking outside modal
-window.addEventListener("click", function(event) {
+function closeTeleconsultationDetails() {
 
-    const teleModal =
-        document.getElementById("teleconsultationModal");
+    const modal =
+        document.getElementById("teleconsultationDetails");
 
-    const detailsModal =
-        document.getElementById("teleDetailsModal");
+    modal.style.display = "none";
 
-    if (event.target === teleModal) {
-        closeTeleconsultation();
-    }
+    document.body.style.overflow = "auto";
+}
 
-    if (event.target === detailsModal) {
-        closeTeleDetails();
-    }
 
-});
+// Close Teleconsultation package overlay
+document.getElementById("teleconsultationPackages")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeTeleconsultationPackages();
+        }
+
+    });
+
+
+// Close Teleconsultation details overlay
+document.getElementById("teleconsultationDetails")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeTeleconsultationDetails();
+        }
+
+    });
