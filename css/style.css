@@ -265,25 +265,6 @@ z-index:9999;
 
 /* ================= NAVBAR ================= */
 
-.navbar{
- .navbar{
-.navbar{
-    position:relative;
-    top:auto;
-    left:auto;
-    transform:none;
-    width:100%;
-    max-width:none;
-    background:rgba(255,255,255,.97);
-    backdrop-filter:blur(15px);
-    border-radius:0;
-    padding:14px 30px;
-    z-index:9999;
-    box-shadow:0 5px 20px rgba(0,0,0,.10);
-}
-}
-}
-
 .nav-container{
     display:flex;
     justify-content:space-between;
