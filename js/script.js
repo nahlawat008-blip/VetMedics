@@ -674,8 +674,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            locationElement.textContent =
-                `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
+            fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+    .then(response => response.json())
+    .then(data => {
+        const place = data.locality || data.city || data.localityInfo?.administrative?.[2]?.name || "";
+        const state = data.principalSubdivision || "";
+
+        locationElement.textContent =
+            place && state ? `${place}, ${state}` : place || state || "Location unavailable";
+    })
+    .catch(() => {
+        locationElement.textContent = "Location unavailable";
+    });
 
         },
         function () {
