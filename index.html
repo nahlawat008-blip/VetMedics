@@ -136,12 +136,21 @@ Call Now
     </button>
 </div>
 
-<div class="service-card">
-<img src="images/homevisit.png" alt="">
-<h3>Home Visit</h3>
-    <span class="service-badge">24*7</span>  
-<p>Vet consultation at your doorstep.</p>
-<a href="#appointment">Book Now</a>
+<div class="service-card"
+     onclick="openHomeVisitPackages()">
+
+    <span class="service-badge">At Home</span>
+
+    <img src="images/home-visit.png" alt="Home Visit">
+
+    <h3>Home Visit</h3>
+
+    <p>Professional veterinary care at your doorstep.</p>
+
+    <button type="button" class="view-package-btn">
+        View Options
+    </button>
+
 </div>
 
 <div class="service-card">
@@ -460,6 +469,84 @@ Compassion With Care
         </button>
 
         <div id="teleconsultationDetailContent"></div>
+
+    </div>
+
+</div>
+
+    <!-- ================= HOME VISIT PACKAGES ================= -->
+
+<div id="homeVisitPackages" class="package-overlay">
+
+    <div class="package-modal">
+
+        <button class="close-package"
+                onclick="closeHomeVisitPackages()">
+            ×
+        </button>
+
+        <h2>Home Visit</h2>
+
+        <p class="package-subtitle">
+            Choose the type of home visit for your pet
+        </p>
+
+        <div class="package-grid">
+
+            <!-- General Home Visit -->
+            <div class="package-card"
+                 onclick="showHomeVisitDetails('general')">
+
+                <span class="package-icon">🏠</span>
+
+                <h3>General Home Visit</h3>
+
+                <p>
+                    Veterinary consultation and basic care
+                    at your doorstep.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+
+            <!-- Home Vaccination Visit -->
+            <div class="package-card"
+                 onclick="showHomeVisitDetails('vaccination')">
+
+                <span class="package-icon">💉</span>
+
+                <h3>Home Vaccination Visit</h3>
+
+                <p>
+                    Convenient vaccination service for your pet
+                    at home.
+                </p>
+
+                <strong>View Details →</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HOME VISIT DETAILS ================= -->
+
+<div id="homeVisitDetails" class="package-overlay">
+
+    <div class="detail-modal">
+
+        <button class="close-package"
+                onclick="closeHomeVisitDetails()">
+            ×
+        </button>
+
+        <div id="homeVisitDetailContent"></div>
 
     </div>
 
