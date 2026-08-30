@@ -376,7 +376,40 @@
 
                     </div>
 
+<!-- Teleconsultation Options -->
 
+<div
+    class="form-group"
+    id="teleconsultationOptions"
+    style="display: none;"
+>
+
+    <label for="consultationType">
+        Consultation Type
+    </label>
+
+    <select id="consultationType">
+
+        <option value="">
+            Select Consultation Type
+        </option>
+
+        <option value="Video Consultation">
+            📹 Video Consultation
+        </option>
+
+        <option value="Phone Consultation">
+            📞 Phone Consultation
+        </option>
+
+        <option value="Follow-up Consultation">
+            🔄 Follow-up Consultation
+        </option>
+
+    </select>
+
+</div>
+                    
                     <button
                         type="submit"
                         class="appointment-submit"
@@ -409,7 +442,40 @@
 
     </main>
 
+<script>
 
+    const serviceType =
+        document.getElementById("serviceType");
+
+    const teleconsultationOptions =
+        document.getElementById("teleconsultationOptions");
+
+    const consultationType =
+        document.getElementById("consultationType");
+
+
+    serviceType.addEventListener("change", function () {
+
+        if (this.value === "Teleconsultation") {
+
+            teleconsultationOptions.style.display = "block";
+
+            consultationType.required = true;
+
+        } else {
+
+            teleconsultationOptions.style.display = "none";
+
+            consultationType.required = false;
+
+            consultationType.value = "";
+
+        }
+
+    });
+
+</script>
+    
     <script src="js/script.js"></script>
 
 </body>
