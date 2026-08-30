@@ -409,6 +409,32 @@
     </select>
 
 </div>
+
+                    <!-- Home Visit Options -->
+
+<div class="form-group" id="homeVisitOptions" style="display: none;">
+
+    <label for="homeVisitType">
+        Home Visit Type
+    </label>
+
+    <select id="homeVisitType">
+
+        <option value="">
+            Select Home Visit Type
+        </option>
+
+        <option value="General Home Visit">
+            🏠 General Home Visit
+        </option>
+
+        <option value="Home Vaccination Visit">
+            💉 Home Vaccination Visit
+        </option>
+
+    </select>
+
+</div>
                     
                     <button
                         type="submit"
@@ -444,35 +470,54 @@
 
 <script>
 
-    const serviceType =
-        document.getElementById("serviceType");
+const serviceType =
+    document.getElementById("serviceType");
 
-    const teleconsultationOptions =
-        document.getElementById("teleconsultationOptions");
+const teleconsultationOptions =
+    document.getElementById("teleconsultationOptions");
 
-    const consultationType =
-        document.getElementById("consultationType");
+const consultationType =
+    document.getElementById("consultationType");
+
+const homeVisitOptions =
+    document.getElementById("homeVisitOptions");
+
+const homeVisitType =
+    document.getElementById("homeVisitType");
 
 
-    serviceType.addEventListener("change", function () {
+serviceType.addEventListener("change", function () {
 
-        if (this.value === "Teleconsultation") {
+    // TELECONSULTATION
+    if (this.value === "Teleconsultation") {
 
-            teleconsultationOptions.style.display = "block";
+        teleconsultationOptions.style.display = "block";
+        consultationType.required = true;
 
-            consultationType.required = true;
+    } else {
 
-        } else {
+        teleconsultationOptions.style.display = "none";
+        consultationType.required = false;
+        consultationType.value = "";
 
-            teleconsultationOptions.style.display = "none";
+    }
 
-            consultationType.required = false;
 
-            consultationType.value = "";
+    // HOME VISIT
+    if (this.value === "Home Visit") {
 
-        }
+        homeVisitOptions.style.display = "block";
+        homeVisitType.required = true;
 
-    });
+    } else {
+
+        homeVisitOptions.style.display = "none";
+        homeVisitType.required = false;
+        homeVisitType.value = "";
+
+    }
+
+});
 
 </script>
     
