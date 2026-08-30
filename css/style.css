@@ -1223,3 +1223,533 @@ color:#0F9D8A;
     }
 
 }
+
+```css
+/* =====================================================
+   COMPACT SIZE FIX - VET MEDICS
+   Paste this at the VERY END of style.css
+===================================================== */
+
+/* ---------- GLOBAL ---------- */
+
+.container{
+    width:92%;
+    max-width:1120px;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+    padding:8px 0 !important;
+}
+
+.navbar .container{
+    min-height:58px;
+}
+
+.logo{
+    gap:8px;
+}
+
+.logo img{
+    width:44px !important;
+    height:44px !important;
+}
+
+.logo h2{
+    font-size:21px !important;
+    line-height:1.1;
+}
+
+.logo span{
+    font-size:11px !important;
+}
+
+.nav-links{
+    gap:22px !important;
+}
+
+.nav-links a{
+    font-size:14px;
+}
+
+.nav-buttons{
+    gap:7px;
+}
+
+.call-btn{
+    padding:8px 16px !important;
+    font-size:13px;
+}
+
+.whatsapp-btn{
+    width:38px !important;
+    height:38px !important;
+    font-size:17px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    padding:125px 5% 55px !important;
+}
+
+.hero-content{
+    gap:35px !important;
+    max-width:1120px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:46px !important;
+    line-height:1.15;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:16px !important;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.hero-tag{
+    padding:7px 14px !important;
+    font-size:13px;
+    margin-bottom:14px;
+}
+
+/* ---------- HERO BUTTONS ---------- */
+
+.hero-buttons{
+    gap:12px !important;
+    margin-top:20px !important;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:12px 22px !important;
+    font-size:14px !important;
+}
+
+/* ---------- SEARCH BAR ---------- */
+
+.search-box{
+    max-width:560px !important;
+    margin:22px 0 !important;
+    padding:5px 7px 5px 12px !important;
+    border-radius:16px !important;
+}
+
+.search-box i{
+    font-size:16px !important;
+    padding-right:7px !important;
+}
+
+.search-box input{
+    font-size:13px !important;
+    padding:11px 5px !important;
+}
+
+.search-box button{
+    padding:10px 20px !important;
+    border-radius:12px !important;
+    font-size:12px !important;
+}
+
+/* ---------- SERVICES SECTION ---------- */
+
+.service-categories{
+    padding:60px 5% !important;
+}
+
+.section-title{
+    font-size:34px !important;
+    margin-bottom:30px !important;
+}
+
+.service-grid{
+    gap:20px !important;
+    margin-top:30px !important;
+}
+
+/* ---------- SERVICE CARDS ---------- */
+
+.service-card{
+    border-radius:18px !important;
+    padding:23px 18px !important;
+}
+
+.service-card img{
+    width:72px !important;
+    height:72px !important;
+    margin-bottom:12px !important;
+}
+
+.service-card h3{
+    font-size:19px !important;
+    margin-bottom:7px !important;
+}
+
+.service-card p{
+    font-size:13px !important;
+    line-height:1.5 !important;
+    margin-bottom:14px !important;
+}
+
+.service-card a,
+.view-package-btn{
+    padding:9px 18px !important;
+    font-size:12px !important;
+}
+
+.service-badge{
+    top:12px !important;
+    right:12px !important;
+    padding:4px 8px !important;
+    font-size:9px !important;
+}
+
+/* ---------- ABOUT / GALLERY / CONTACT ---------- */
+
+section{
+    padding:60px 0 !important;
+}
+
+section h2{
+    font-size:32px !important;
+    margin-bottom:25px !important;
+}
+
+#about p,
+#gallery p,
+#contact p{
+    font-size:14px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    padding:20px !important;
+    font-size:13px;
+}
+
+/* ---------- FLOATING WHATSAPP ---------- */
+
+.floating-whatsapp{
+    width:50px !important;
+    height:50px !important;
+    right:15px !important;
+    bottom:15px !important;
+    font-size:23px !important;
+}
+
+/* ---------- BACK TO TOP ---------- */
+
+.top-btn{
+    width:42px !important;
+    height:42px !important;
+    left:15px !important;
+    bottom:15px !important;
+    font-size:17px !important;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+    .navbar{
+        padding:8px 15px !important;
+    }
+
+    .logo img{
+        width:42px !important;
+        height:42px !important;
+    }
+
+    .logo h2{
+        font-size:20px !important;
+    }
+
+    .hero{
+        padding:115px 25px 45px !important;
+    }
+
+    .hero h1{
+        font-size:40px !important;
+    }
+
+    .hero-content{
+        gap:20px !important;
+    }
+
+    .hero-right img{
+        max-width:330px !important;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    /* NAVBAR */
+
+    .navbar{
+        padding:7px 10px !important;
+    }
+
+    .navbar .container{
+        min-height:52px;
+    }
+
+    .logo{
+        gap:7px;
+    }
+
+    .logo img{
+        width:38px !important;
+        height:38px !important;
+    }
+
+    .logo h2{
+        font-size:18px !important;
+    }
+
+    .logo span{
+        font-size:9px !important;
+    }
+
+    /*
+       Mobile navigation compact
+    */
+
+    .nav-links{
+        gap:9px !important;
+    }
+
+    .nav-links a{
+        font-size:11px !important;
+    }
+
+    /* HERO */
+
+    .hero{
+        padding:100px 16px 40px !important;
+    }
+
+    .hero-content{
+        gap:15px !important;
+    }
+
+    .hero h1{
+        font-size:30px !important;
+        line-height:1.18 !important;
+        margin-bottom:12px !important;
+    }
+
+    .hero p{
+        font-size:13px !important;
+        line-height:1.5 !important;
+    }
+
+    .hero-tag{
+        font-size:10px !important;
+        padding:6px 11px !important;
+    }
+
+    /* SEARCH */
+
+    .search-box{
+        margin:16px 0 !important;
+        width:100% !important;
+        border-radius:14px !important;
+    }
+
+    .search-box i{
+        font-size:14px !important;
+    }
+
+    .search-box input{
+        font-size:11px !important;
+        padding:10px 3px !important;
+    }
+
+    .search-box button{
+        padding:9px 13px !important;
+        font-size:10px !important;
+        border-radius:10px !important;
+    }
+
+    /* BUTTONS */
+
+    .hero-buttons{
+        gap:9px !important;
+        margin-top:12px !important;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        padding:11px 17px !important;
+        font-size:12px !important;
+    }
+
+    /* HERO IMAGE */
+
+    .hero-right img{
+        width:80% !important;
+        max-width:280px !important;
+    }
+
+    /* SERVICES */
+
+    .service-categories{
+        padding:45px 12px !important;
+    }
+
+    .section-title{
+        font-size:27px !important;
+        margin-bottom:22px !important;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+        margin-top:20px !important;
+    }
+
+    .service-card{
+        padding:18px 8px !important;
+        border-radius:15px !important;
+    }
+
+    .service-card img{
+        width:58px !important;
+        height:58px !important;
+        margin-bottom:8px !important;
+    }
+
+    .service-card h3{
+        font-size:15px !important;
+        margin-bottom:5px !important;
+    }
+
+    .service-card p{
+        font-size:10px !important;
+        line-height:1.4 !important;
+        margin-bottom:10px !important;
+    }
+
+    .service-card a,
+    .view-package-btn{
+        padding:7px 12px !important;
+        font-size:10px !important;
+        border-radius:20px !important;
+    }
+
+    .service-badge{
+        top:8px !important;
+        right:7px !important;
+        padding:3px 6px !important;
+        font-size:7px !important;
+    }
+
+    /* OTHER SECTIONS */
+
+    section{
+        padding:45px 15px !important;
+    }
+
+    section h2{
+        font-size:26px !important;
+        margin-bottom:20px !important;
+    }
+
+    /* FLOATING BUTTON */
+
+    .floating-whatsapp{
+        width:45px !important;
+        height:45px !important;
+        right:12px !important;
+        bottom:12px !important;
+        font-size:20px !important;
+    }
+
+    .top-btn{
+        width:38px !important;
+        height:38px !important;
+        left:12px !important;
+        bottom:12px !important;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+    .logo img{
+        width:35px !important;
+        height:35px !important;
+    }
+
+    .logo h2{
+        font-size:17px !important;
+    }
+
+    .nav-links{
+        gap:7px !important;
+    }
+
+    .nav-links a{
+        font-size:10px !important;
+    }
+
+    .hero{
+        padding-top:92px !important;
+    }
+
+    .hero h1{
+        font-size:27px !important;
+    }
+
+    .hero p{
+        font-size:12px !important;
+    }
+
+    .hero-right img{
+        width:75% !important;
+        max-width:250px !important;
+    }
+
+    .service-grid{
+        gap:10px !important;
+    }
+
+    .service-card{
+        padding:16px 6px !important;
+    }
+
+    .service-card img{
+        width:52px !important;
+        height:52px !important;
+    }
+
+    .service-card h3{
+        font-size:14px !important;
+    }
+
+    .service-card p{
+        font-size:9px !important;
+    }
+
+}
+```
