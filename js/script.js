@@ -511,3 +511,146 @@ document.getElementById("teleconsultationDetails")
         }
 
     });
+
+// ================= HOME VISIT PACKAGES =================
+
+function openHomeVisitPackages() {
+
+    const modal =
+        document.getElementById("homeVisitPackages");
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeHomeVisitPackages() {
+
+    const modal =
+        document.getElementById("homeVisitPackages");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// ================= HOME VISIT DETAILS =================
+
+function showHomeVisitDetails(type) {
+
+    const detailModal =
+        document.getElementById("homeVisitDetails");
+
+    const content =
+        document.getElementById("homeVisitDetailContent");
+
+    let html = "";
+
+
+    // GENERAL HOME VISIT
+
+    if (type === "general") {
+
+        html = `
+            <h2>🏠 General Home Visit</h2>
+
+            <h3>Service Includes</h3>
+
+            <ul>
+                <li>Veterinary consultation at your home</li>
+                <li>Basic clinical examination</li>
+                <li>Discussion of your pet's health concerns</li>
+                <li>Medication and care guidance</li>
+                <li>Further treatment recommendations if required</li>
+            </ul>
+
+            <h3>Suitable For</h3>
+
+            <p>
+                Pets requiring veterinary consultation or basic
+                examination at home.
+            </p>
+
+            <div class="package-price">
+                Price: ₹____
+            </div>
+        `;
+
+    }
+
+
+    // HOME VACCINATION VISIT
+
+    else if (type === "vaccination") {
+
+        html = `
+            <h2>💉 Home Vaccination Visit</h2>
+
+            <h3>Service Includes</h3>
+
+            <ul>
+                <li>Veterinary visit at your doorstep</li>
+                <li>Pre-vaccination health assessment</li>
+                <li>Vaccination as recommended</li>
+                <li>Vaccination record update</li>
+                <li>Post-vaccination guidance</li>
+            </ul>
+
+            <h3>Suitable For</h3>
+
+            <p>
+                Pet owners who prefer to get their pet vaccinated
+                conveniently at home.
+            </p>
+
+            <div class="package-price">
+                Price: ₹____
+            </div>
+        `;
+
+    }
+
+
+    content.innerHTML = html;
+
+    detailModal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeHomeVisitDetails() {
+
+    const modal =
+        document.getElementById("homeVisitDetails");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+// Close Home Visit packages by clicking outside
+
+document.getElementById("homeVisitPackages")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeHomeVisitPackages();
+        }
+
+    });
+
+
+// Close Home Visit details by clicking outside
+
+document.getElementById("homeVisitDetails")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeHomeVisitDetails();
+        }
+
+    });
