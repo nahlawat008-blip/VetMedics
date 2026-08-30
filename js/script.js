@@ -346,3 +346,140 @@ document.getElementById("packageDetails").addEventListener("click", function(e) 
     }
 
 });
+
+// ================================
+// TELECONSULTATION
+// ================================
+
+function openTeleconsultation() {
+    document.getElementById("teleconsultationModal").style.display = "flex";
+}
+
+function closeTeleconsultation() {
+    document.getElementById("teleconsultationModal").style.display = "none";
+}
+
+function closeTeleDetails() {
+    document.getElementById("teleDetailsModal").style.display = "none";
+}
+
+
+function showTeleDetails(type) {
+
+    const details = document.getElementById("teleDetails");
+
+    if (type === "video") {
+
+        details.innerHTML = `
+            <div class="details-icon">
+                <i class="fas fa-video"></i>
+            </div>
+
+            <h2>Video Consultation</h2>
+
+            <p>
+                Get veterinary consultation through a live video call.
+                Our veterinarian can discuss your pet's symptoms,
+                medical history and provide appropriate guidance.
+            </p>
+
+            <h4>Suitable for:</h4>
+
+            <ul>
+                <li>General health concerns</li>
+                <li>Skin and minor health problems</li>
+                <li>Diet and nutrition advice</li>
+                <li>Post-treatment guidance</li>
+            </ul>
+
+            <div class="details-price">
+                Price: ₹—
+            </div>
+        `;
+
+    }
+
+
+    else if (type === "phone") {
+
+        details.innerHTML = `
+            <div class="details-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+
+            <h2>Phone Consultation</h2>
+
+            <p>
+                Talk directly with our veterinarian over a phone call
+                and get professional advice regarding your pet's health.
+            </p>
+
+            <h4>Suitable for:</h4>
+
+            <ul>
+                <li>General veterinary advice</li>
+                <li>Medication guidance</li>
+                <li>Diet and care advice</li>
+                <li>Initial assessment of health concerns</li>
+            </ul>
+
+            <div class="details-price">
+                Price: ₹—
+            </div>
+        `;
+
+    }
+
+
+    else if (type === "followup") {
+
+        details.innerHTML = `
+            <div class="details-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+
+            <h2>Follow-up Consultation</h2>
+
+            <p>
+                Continue your pet's treatment and monitor recovery
+                with a follow-up consultation from our veterinarian.
+            </p>
+
+            <h4>Suitable for:</h4>
+
+            <ul>
+                <li>Monitoring treatment progress</li>
+                <li>Post-treatment follow-up</li>
+                <li>Review of previously discussed problems</li>
+                <li>Further care and medication guidance</li>
+            </ul>
+
+            <div class="details-price">
+                Price: ₹—
+            </div>
+        `;
+
+    }
+
+    document.getElementById("teleDetailsModal").style.display = "flex";
+}
+
+
+// Close when clicking outside modal
+window.addEventListener("click", function(event) {
+
+    const teleModal =
+        document.getElementById("teleconsultationModal");
+
+    const detailsModal =
+        document.getElementById("teleDetailsModal");
+
+    if (event.target === teleModal) {
+        closeTeleconsultation();
+    }
+
+    if (event.target === detailsModal) {
+        closeTeleDetails();
+    }
+
+});
