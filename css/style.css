@@ -395,6 +395,36 @@ font-size:22px;
 padding:14px 20px;
 }
 
+/* ================= PET PARENT LOCATION ================= */
+
+.pet-parent-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+    margin-left: 5px;
+    padding-left: 18px;
+    border-left: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.pet-parent-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4B2E83;
+}
+
+.pet-parent-place {
+    font-size: 11px;
+    font-weight: 500;
+    color: #777;
+    margin-top: 3px;
+}
+
+#user-location {
+    color: #0F9D8A;
+}
+   
 }
 
 /*================ HERO =================*/
