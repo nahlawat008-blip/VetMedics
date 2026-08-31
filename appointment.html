@@ -553,24 +553,104 @@ serviceType.addEventListener("change", function () {
 const successMessage =
     document.getElementById("successMessage");
 
-appointmentForm.addEventListener("submit", function (e) {
+appointmentForm.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
-    successMessage.style.display = "block";
+    const submitButton =
+        appointmentForm.querySelector("button[type='submit']");
 
-    appointmentForm.reset();
+    submitButton.disabled = true;
+    submitButton.innerText = "Submitting...";
 
-    teleconsultationOptions.style.display = "none";
-    homeVisitOptions.style.display = "none";
+    const data = {
 
-    consultationType.required = false;
-    homeVisitType.required = false;
+        name: document.getElementById("ownerName").value,
 
-    successMessage.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
+        phone: document.getElementById("phoneNumber").value,
+
+        petName: document.getElementById("petName").value,
+
+        petType: document.getElementById("petType").value,
+
+        service: serviceType.value,
+
+        serviceType:
+            consultationType.value ||
+            homeVisitType.value ||
+            "",
+
+        appointmentDate:
+            document.getElementById("appointmentDate")?.value || "",
+
+        appointmentTime:
+            document.getElementById("appointmentTime")?.value || "",
+
+        problem:
+            document.getElementById("problem")?.value || ""
+
+    };
+
+
+    const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwLpXrr_W85QVLejfbN9tHmLkVrxdb_fIZiqVJoaD0h16MtZPzfzRXwmjqsu8Xj0s1x/exec";
+
+
+    try {
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(data)
+
+        });
+
+
+        successMessage.innerHTML = `
+            <strong>✅ Appointment registered successfully!</strong>
+            <br><br>
+            🐾 Our team will review your request
+            and contact you shortly.
+        `;
+
+        successMessage.style.display = "block";
+
+
+        appointmentForm.reset();
+
+        teleconsultationOptions.style.display = "none";
+        homeVisitOptions.style.display = "none";
+
+        consultationType.required = false;
+        homeVisitType.required = false;
+
+
+        successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    }
+
+
+    submitButton.disabled = false;
+    submitButton.innerText = "Submit Appointment";
 
 });
 
