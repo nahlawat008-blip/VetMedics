@@ -547,6 +547,33 @@ serviceType.addEventListener("change", function () {
 
 });
 
+    const appointmentForm =
+    document.getElementById("appointmentForm");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+appointmentForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    successMessage.style.display = "block";
+
+    appointmentForm.reset();
+
+    teleconsultationOptions.style.display = "none";
+    homeVisitOptions.style.display = "none";
+
+    consultationType.required = false;
+    homeVisitType.required = false;
+
+    successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
 </script>
     
     <script src="js/script.js"></script>
