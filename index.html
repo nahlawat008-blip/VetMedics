@@ -53,6 +53,160 @@
     </div>
 
 </div>
+
+<!-- ================= PET PARENT DASHBOARD ================= -->
+
+<div id="petParentDashboard" class="pet-modal">
+
+    <div class="pet-dashboard-box">
+
+        <button
+            class="pet-modal-close"
+            onclick="closePetDashboard()">
+
+            &times;
+
+        </button>
+
+
+        <!-- Dashboard Header -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span>Welcome back 👋</span>
+
+                <h2 id="dashboardParentPhone">
+                    Pet Parent
+                </h2>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                onclick="petParentLogout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+
+        <!-- Dashboard Stats -->
+
+        <div class="dashboard-stats">
+
+            <div class="dashboard-stat">
+
+                <span>🐶</span>
+
+                <strong id="totalPets">0</strong>
+
+                <small>My Pets</small>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <span>📅</span>
+
+                <strong id="totalAppointments">0</strong>
+
+                <small>Appointments</small>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <span>🩺</span>
+
+                <strong id="totalServices">0</strong>
+
+                <small>Services</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- My Pets -->
+
+        <div class="dashboard-section">
+
+            <div class="section-heading">
+
+                <h3>🐾 My Pets</h3>
+
+                <button
+                    class="add-pet-btn"
+                    onclick="openAddPet()">
+
+                    + Add Pet
+
+                </button>
+
+            </div>
+
+
+            <div id="myPetsList">
+
+                <div class="empty-pets">
+
+                    <div>🐶</div>
+
+                    <p>No pets added yet.</p>
+
+                    <small>
+                        Add your pet to manage their details.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Services -->
+
+        <div class="dashboard-section">
+
+            <h3>🩺 Service History</h3>
+
+            <div id="serviceHistory">
+
+                <div class="empty-history">
+                    No services yet.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Appointments -->
+
+        <div class="dashboard-section">
+
+            <h3>📅 Appointments</h3>
+
+            <div id="appointmentHistory">
+
+                <div class="empty-history">
+                    No appointments yet.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
         
 </nav>
 
