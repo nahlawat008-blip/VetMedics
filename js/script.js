@@ -693,3 +693,237 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 });
+
+/* =========================================
+   PET PARENT OTP LOGIN
+========================================= */
+
+let confirmationResult = null;
+
+let recaptchaVerifier = null;
+
+
+/* Open Login */
+
+function openPetParentLogin() {
+
+    const user =
+        localStorage.getItem("vetMedicsPhone");
+
+    if (user) {
+
+        openPetDashboard();
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "petParentLoginModal"
+    ).style.display = "flex";
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* Close Login */
+
+function closePetParentLogin() {
+
+    document.getElementById(
+        "petParentLoginModal"
+    ).style.display = "none";
+
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+/* Send OTP */
+
+async function sendPetParentOTP() {
+
+    const phone =
+        document.getElementById(
+            "petParentPhone"
+        ).value.trim();
+
+
+    if (!/^[0-9]{10}$/.test(phone)) {
+
+        showLoginMessage(
+            "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    const fullPhone = "+91" + phone;
+
+
+    try {
+
+        if (!recaptchaVerifier) {
+
+            recaptchaVerifier =
+                new window.RecaptchaVerifier(
+                    "recaptcha-container",
+                    {
+                        size: "normal"
+                    },
+                    window.firebaseAuth
+                );
+
+        }
+
+
+        confirmationResult =
+            await window.signInWithPhoneNumber(
+                window.firebaseAuth,
+                fullPhone,
+                recaptchaVerifier
+            );
+
+
+        document.getElementById(
+            "phoneLoginStep"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "otpLoginStep"
+        ).style.display = "block";
+
+
+        showLoginMessage(
+            "OTP sent successfully."
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        showLoginMessage(
+            "OTP send nahi hua. Please try again."
+        );
+
+    }
+
+}
+
+
+/* Verify OTP */
+
+async function verifyPetParentOTP() {
+
+    const otp =
+        document.getElementById(
+            "petParentOTP"
+        ).value.trim();
+
+
+    if (!/^[0-9]{6}$/.test(otp)) {
+
+        showLoginMessage(
+            "Please enter 6 digit OTP."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const result =
+            await confirmationResult.confirm(otp);
+
+
+        const user = result.user;
+
+
+        /*
+         * YAHAN NUMBER MIL RAHA HAI
+         */
+
+        const phoneNumber =
+            user.phoneNumber;
+
+
+        console.log(
+            "Pet Parent Number:",
+            phoneNumber
+        );
+
+
+        /*
+         * Save verified number locally
+         */
+
+        localStorage.setItem(
+            "vetMedicsPhone",
+            phoneNumber
+        );
+
+
+        closePetParentLogin();
+
+
+        document.getElementById(
+            "petParentNavText"
+        ).textContent = "My Account";
+
+
+        openPetDashboard();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        showLoginMessage(
+            "Wrong OTP. Please try again."
+        );
+
+    }
+
+}
+
+
+/* Change Number */
+
+function changePetParentNumber() {
+
+    document.getElementById(
+        "otpLoginStep"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "phoneLoginStep"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "petParentOTP"
+    ).value = "";
+
+}
+
+
+/* Message */
+
+function showLoginMessage(message) {
+
+    document.getElementById(
+        "loginMessage"
+    ).textContent = message;
+
+}
