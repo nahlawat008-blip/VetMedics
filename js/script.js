@@ -927,3 +927,194 @@ function showLoginMessage(message) {
     ).textContent = message;
 
 }
+
+/* =========================================
+   PET PARENT DASHBOARD
+========================================= */
+
+function openPetDashboard() {
+
+    const phone =
+        localStorage.getItem(
+            "vetMedicsPhone"
+        );
+
+
+    if (!phone) {
+
+        openPetParentLogin();
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "dashboardParentPhone"
+    ).textContent = phone;
+
+
+    document.getElementById(
+        "petParentDashboard"
+    ).style.display = "flex";
+
+
+    document.body.style.overflow = "hidden";
+
+
+    loadPetParentData();
+
+}
+
+
+/* Close Dashboard */
+
+function closePetDashboard() {
+
+    document.getElementById(
+        "petParentDashboard"
+    ).style.display = "none";
+
+
+    document.body.style.overflow = "auto";
+
+}
+
+
+/* Logout */
+
+function petParentLogout() {
+
+    localStorage.removeItem(
+        "vetMedicsPhone"
+    );
+
+
+    closePetDashboard();
+
+
+    document.getElementById(
+        "petParentNavText"
+    ).textContent =
+        "Pet Parent Login";
+
+}
+
+
+/* =========================================
+   PET DATA
+========================================= */
+
+function getPetParentData() {
+
+    const phone =
+        localStorage.getItem(
+            "vetMedicsPhone"
+        );
+
+
+    if (!phone) return null;
+
+
+    const key =
+        "vetMedicsData_" + phone;
+
+
+    let data =
+        localStorage.getItem(key);
+
+
+    if (!data) {
+
+        data = {
+
+            pets: [],
+
+            appointments: [],
+
+            services: []
+
+        };
+
+        localStorage.setItem(
+            key,
+            JSON.stringify(data)
+        );
+
+    } else {
+
+        data = JSON.parse(data);
+
+    }
+
+
+    return data;
+
+}
+
+
+/* Save Data */
+
+function savePetParentData(data) {
+
+    const phone =
+        localStorage.getItem(
+            "vetMedicsPhone"
+        );
+
+
+    if (!phone) return;
+
+
+    const key =
+        "vetMedicsData_" + phone;
+
+
+    localStorage.setItem(
+        key,
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* =========================================
+   LOAD DASHBOARD
+========================================= */
+
+function loadPetParentData() {
+
+    const data =
+        getPetParentData();
+
+
+    if (!data) return;
+
+
+    document.getElementById(
+        "totalPets"
+    ).textContent =
+        data.pets.length;
+
+
+    document.getElementById(
+        "totalAppointments"
+    ).textContent =
+        data.appointments.length;
+
+
+    document.getElementById(
+        "totalServices"
+    ).textContent =
+        data.services.length;
+
+
+    loadPets(data);
+
+
+    loadServices(data);
+
+
+    loadAppointments(data);
+
+}
