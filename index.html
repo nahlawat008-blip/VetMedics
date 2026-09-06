@@ -567,6 +567,102 @@ Compassion With Care
 
 </div>
 
+<!-- ================= PET PARENT LOGIN ================= -->
+
+<div id="petParentLoginModal" class="pet-modal">
+
+    <div class="pet-login-box">
+
+        <button class="pet-modal-close"
+                onclick="closePetParentLogin()">
+            &times;
+        </button>
+
+        <div class="pet-login-icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+
+        <h2>Pet Parent Login</h2>
+
+        <p class="pet-login-subtitle">
+            Login to manage your pets and appointments
+        </p>
+
+
+        <!-- STEP 1 : MOBILE NUMBER -->
+
+        <div id="phoneLoginStep">
+
+            <label>Mobile Number</label>
+
+            <div class="phone-input">
+
+                <span>+91</span>
+
+                <input
+                    type="tel"
+                    id="petParentPhone"
+                    placeholder="Enter 10 digit mobile number"
+                    maxlength="10"
+                    inputmode="numeric"
+                >
+
+            </div>
+
+            <button
+                class="pet-login-submit"
+                onclick="sendPetParentOTP()">
+
+                Send OTP
+
+            </button>
+
+        </div>
+
+
+        <!-- STEP 2 : OTP -->
+
+        <div id="otpLoginStep" style="display:none;">
+
+            <label>Enter OTP</label>
+
+            <input
+                type="text"
+                id="petParentOTP"
+                class="otp-input"
+                placeholder="Enter 6 digit OTP"
+                maxlength="6"
+                inputmode="numeric"
+            >
+
+            <button
+                class="pet-login-submit"
+                onclick="verifyPetParentOTP()">
+
+                Verify OTP
+
+            </button>
+
+            <button
+                class="change-number-btn"
+                onclick="changePetParentNumber()">
+
+                Change Number
+
+            </button>
+
+        </div>
+
+        <!-- Firebase Recaptcha -->
+
+        <div id="recaptcha-container"></div>
+
+        <p id="loginMessage" class="login-message"></p>
+
+    </div>
+
+</div>
+    
 <script src="js/script.js"></script>
 
 </body>
