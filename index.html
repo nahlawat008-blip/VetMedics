@@ -207,6 +207,103 @@
     </div>
 
 </div>
+
+        <!-- ================= ADD PET ================= -->
+
+<div id="addPetModal" class="pet-modal">
+
+    <div class="add-pet-box">
+
+        <button
+            class="pet-modal-close"
+            onclick="closeAddPet()">
+
+            &times;
+
+        </button>
+
+
+        <div class="pet-login-icon">
+            🐾
+        </div>
+
+        <h2>Add Your Pet</h2>
+
+        <p class="pet-login-subtitle">
+            Add your pet's details
+        </p>
+
+
+        <input
+            type="text"
+            id="petName"
+            placeholder="Pet Name"
+        >
+
+
+        <select id="petType">
+
+            <option value="">
+                Select Pet Type
+            </option>
+
+            <option value="Dog">
+                🐶 Dog
+            </option>
+
+            <option value="Cat">
+                🐱 Cat
+            </option>
+
+            <option value="Other">
+                🐾 Other
+            </option>
+
+        </select>
+
+
+        <input
+            type="text"
+            id="petBreed"
+            placeholder="Breed"
+        >
+
+
+        <input
+            type="number"
+            id="petAge"
+            placeholder="Age"
+        >
+
+
+        <select id="petGender">
+
+            <option value="">
+                Select Gender
+            </option>
+
+            <option value="Male">
+                Male
+            </option>
+
+            <option value="Female">
+                Female
+            </option>
+
+        </select>
+
+
+        <button
+            class="pet-login-submit"
+            onclick="savePet()">
+
+            Add Pet
+
+        </button>
+
+    </div>
+
+</div>
         
 </nav>
 
