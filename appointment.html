@@ -583,8 +583,17 @@ appointmentForm.addEventListener("submit", async function (e) {
         appointmentDate:
             document.getElementById("appointmentDate")?.value || "",
 
-        appointmentTime:
-            document.getElementById("appointmentTime")?.value || "",
+       appointmentTime: (() => {
+    const time = document.getElementById("appointmentTime")?.value || "";
+    if (!time) return "";
+
+    const [hour, minute] = time.split(":");
+    const h = parseInt(hour, 10);
+    const ampm = h >= 12 ? "PM" : "AM";
+    const hour12 = h % 12 || 12;
+
+    return `${hour12}:${minute} ${ampm}`;
+})(), 
 
         problem:
             document.getElementById("problem")?.value || ""
