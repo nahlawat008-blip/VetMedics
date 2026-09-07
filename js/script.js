@@ -1253,3 +1253,209 @@ function savePet() {
     loadPetParentData();
 
 }
+
+/* =========================================
+   LOAD PETS
+========================================= */
+
+function loadPets(data) {
+
+    const container =
+        document.getElementById(
+            "myPetsList"
+        );
+
+
+    if (data.pets.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-pets">
+
+                <div>🐶</div>
+
+                <p>No pets added yet.</p>
+
+                <small>
+                    Add your pet to manage their details.
+                </small>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        data.pets.map(function(pet) {
+
+            const icon =
+                pet.type === "Cat"
+                ? "🐱"
+                : "🐶";
+
+
+            return `
+
+                <div class="pet-card">
+
+                    <div class="pet-avatar">
+                        ${icon}
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            ${pet.name}
+                        </h4>
+
+                        <p>
+                            ${pet.type} • ${pet.breed}
+                        </p>
+
+                        <p>
+                            ${pet.age} years •
+                            ${pet.gender}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+function loadServices(data) {
+
+    const container =
+        document.getElementById(
+            "serviceHistory"
+        );
+
+
+    if (data.services.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-history">
+
+                No services recorded yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        data.services.map(function(service) {
+
+            return `
+
+                <div class="pet-card">
+
+                    <div class="pet-avatar">
+                        🩺
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            ${service.service}
+                        </h4>
+
+                        <p>
+                            Pet: ${service.pet}
+                        </p>
+
+                        <p>
+                            ${service.date}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================
+   APPOINTMENTS
+========================================= */
+
+function loadAppointments(data) {
+
+    const container =
+        document.getElementById(
+            "appointmentHistory"
+        );
+
+
+    if (data.appointments.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-history">
+
+                No appointments yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        data.appointments.map(function(appointment) {
+
+            return `
+
+                <div class="pet-card">
+
+                    <div class="pet-avatar">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            ${appointment.service}
+                        </h4>
+
+                        <p>
+                            Pet: ${appointment.pet}
+                        </p>
+
+                        <p>
+                            ${appointment.date}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
