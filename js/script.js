@@ -1118,3 +1118,138 @@ function loadPetParentData() {
     loadAppointments(data);
 
 }
+
+/* =========================================
+   ADD PET
+========================================= */
+
+function openAddPet() {
+
+    document.getElementById(
+        "addPetModal"
+    ).style.display = "flex";
+
+}
+
+
+function closeAddPet() {
+
+    document.getElementById(
+        "addPetModal"
+    ).style.display = "none";
+
+}
+
+
+/* Save Pet */
+
+function savePet() {
+
+    const name =
+        document.getElementById(
+            "petName"
+        ).value.trim();
+
+
+    const type =
+        document.getElementById(
+            "petType"
+        ).value;
+
+
+    const breed =
+        document.getElementById(
+            "petBreed"
+        ).value.trim();
+
+
+    const age =
+        document.getElementById(
+            "petAge"
+        ).value;
+
+
+    const gender =
+        document.getElementById(
+            "petGender"
+        ).value;
+
+
+    if (
+        !name ||
+        !type ||
+        !breed ||
+        !age ||
+        !gender
+    ) {
+
+        alert("Please fill all pet details.");
+
+        return;
+
+    }
+
+
+    const data =
+        getPetParentData();
+
+
+    if (!data) {
+
+        alert("Please login first.");
+
+        return;
+
+    }
+
+
+    data.pets.push({
+
+        id: Date.now(),
+
+        name: name,
+
+        type: type,
+
+        breed: breed,
+
+        age: age,
+
+        gender: gender,
+
+        addedOn:
+            new Date().toLocaleDateString()
+
+    });
+
+
+    savePetParentData(data);
+
+
+    document.getElementById(
+        "petName"
+    ).value = "";
+
+    document.getElementById(
+        "petType"
+    ).value = "";
+
+    document.getElementById(
+        "petBreed"
+    ).value = "";
+
+    document.getElementById(
+        "petAge"
+    ).value = "";
+
+    document.getElementById(
+        "petGender"
+    ).value = "";
+
+
+    closeAddPet();
+
+
+    loadPetParentData();
+
+}
