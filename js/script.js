@@ -981,13 +981,33 @@ async function loginPetParent() {
    SHOW SIGNUP
 ========================================= */
 
+function showPetParentLogin() {
+
+    document.getElementById(
+        "petParentLoginSection"
+    ).style.display = "block";
+
+    document.getElementById(
+        "petParentSignup"
+    ).style.display = "none";
+
+    showLoginMessage("");
+
+}
+
 function showPetParentSignup() {
+
+    document.getElementById(
+        "petParentLoginSection"
+    ).style.display = "none";
 
     document.getElementById(
         "petParentSignup"
     ).style.display = "block";
 
     showLoginMessage("");
+
+}
 
 }
 
