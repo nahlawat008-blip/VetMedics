@@ -695,15 +695,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================================
-   PET PARENT OTP LOGIN
+   PET PARENT PHONE + PASSWORD LOGIN
 ========================================= */
-
-let confirmationResult = null;
-
-let recaptchaVerifier = null;
-
-
-/* Open Login */
 
 function openPetParentLogin() {
 
@@ -718,18 +711,18 @@ function openPetParentLogin() {
 
     }
 
-
     document.getElementById(
         "petParentLoginModal"
     ).style.display = "flex";
 
-
     document.body.style.overflow = "hidden";
+
+    document.getElementById(
+        "petParentSignup"
+    ).style.display = "none";
 
 }
 
-
-/* Close Login */
 
 function closePetParentLogin() {
 
@@ -737,19 +730,144 @@ function closePetParentLogin() {
         "petParentLoginModal"
     ).style.display = "none";
 
-
     document.body.style.overflow = "auto";
 
 }
 
 
-/* Send OTP */
+/* =========================================
+   CREATE PET PARENT ACCOUNT
+========================================= */
 
-async function sendPetParentOTP() {
+async function createPetParentAccount() {
+
+    const name =
+        document.getElementById(
+            "petParentName"
+        ).value.trim();
+
+    const phone =
+        document.getElementById(
+            "signupPhone"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "signupPassword"
+        ).value.trim();
+
+
+    if (!name) {
+
+        showLoginMessage(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if (!/^[0-9]{10}$/.test(phone)) {
+
+        showLoginMessage(
+            "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    if (password.length < 6) {
+
+        showLoginMessage(
+            "Password must be at least 6 characters."
+        );
+
+        return;
+
+    }
+
+
+    showLoginMessage(
+        "Creating account..."
+    );
+
+
+    try {
+
+        const response = await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    action: "createAccount",
+
+                    name: name,
+
+                    phone: phone,
+
+                    password: password
+
+                })
+
+            }
+        );
+
+
+        const result =
+            await response.json();
+
+
+        if (result.success) {
+
+            showLoginMessage(
+                "Account created successfully. Please login."
+            );
+
+            document.getElementById(
+                "petParentSignup"
+            ).style.display = "none";
+
+        } else {
+
+            showLoginMessage(
+                result.message
+            );
+
+        }
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        showLoginMessage(
+            "Something went wrong. Please try again."
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   PET PARENT LOGIN
+========================================= */
+
+async function loginPetParent() {
 
     const phone =
         document.getElementById(
             "petParentPhone"
+        ).value.trim();
+
+    const password =
+        document.getElementById(
+            "petParentPassword"
         ).value.trim();
 
 
@@ -764,75 +882,10 @@ async function sendPetParentOTP() {
     }
 
 
-    const fullPhone = "+91" + phone;
-
-
-    try {
-
-        if (!recaptchaVerifier) {
-
-            recaptchaVerifier =
-                new window.RecaptchaVerifier(
-                    "recaptcha-container",
-                    {
-                        size: "normal"
-                    },
-                    window.firebaseAuth
-                );
-
-        }
-
-
-        confirmationResult =
-            await window.signInWithPhoneNumber(
-                window.firebaseAuth,
-                fullPhone,
-                recaptchaVerifier
-            );
-
-
-        document.getElementById(
-            "phoneLoginStep"
-        ).style.display = "none";
-
-
-        document.getElementById(
-            "otpLoginStep"
-        ).style.display = "block";
-
+    if (!password) {
 
         showLoginMessage(
-            "OTP sent successfully."
-        );
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        showLoginMessage(
-            "OTP send nahi hua. Please try again."
-        );
-
-    }
-
-}
-
-
-/* Verify OTP */
-
-async function verifyPetParentOTP() {
-
-    const otp =
-        document.getElementById(
-            "petParentOTP"
-        ).value.trim();
-
-
-    if (!/^[0-9]{6}$/.test(otp)) {
-
-        showLoginMessage(
-            "Please enter 6 digit OTP."
+            "Please enter your password."
         );
 
         return;
@@ -840,48 +893,75 @@ async function verifyPetParentOTP() {
     }
 
 
+    showLoginMessage(
+        "Logging in..."
+    );
+
+
     try {
 
+        const response = await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    action: "login",
+
+                    phone: phone,
+
+                    password: password
+
+                })
+
+            }
+        );
+
+
         const result =
-            await confirmationResult.confirm(otp);
+            await response.json();
 
 
-        const user = result.user;
+        if (result.success) {
+
+            localStorage.setItem(
+                "vetMedicsPhone",
+                "+91" + phone
+            );
+
+            localStorage.setItem(
+                "vetMedicsParentName",
+                result.name
+            );
 
 
-        /*
-         * YAHAN NUMBER MIL RAHA HAI
-         */
-
-        const phoneNumber =
-            user.phoneNumber;
+            closePetParentLogin();
 
 
-        console.log(
-            "Pet Parent Number:",
-            phoneNumber
-        );
+            const navText =
+                document.getElementById(
+                    "petParentNavText"
+                );
+
+            if (navText) {
+
+                navText.textContent =
+                    "My Account";
+
+            }
 
 
-        /*
-         * Save verified number locally
-         */
-
-        localStorage.setItem(
-            "vetMedicsPhone",
-            phoneNumber
-        );
+            openPetDashboard();
 
 
-        closePetParentLogin();
+        } else {
 
+            showLoginMessage(
+                result.message
+            );
 
-        document.getElementById(
-            "petParentNavText"
-        ).textContent = "My Account";
-
-
-        openPetDashboard();
+        }
 
 
     } catch (error) {
@@ -889,7 +969,7 @@ async function verifyPetParentOTP() {
         console.error(error);
 
         showLoginMessage(
-            "Wrong OTP. Please try again."
+            "Something went wrong. Please try again."
         );
 
     }
@@ -897,34 +977,37 @@ async function verifyPetParentOTP() {
 }
 
 
-/* Change Number */
+/* =========================================
+   SHOW SIGNUP
+========================================= */
 
-function changePetParentNumber() {
-
-    document.getElementById(
-        "otpLoginStep"
-    ).style.display = "none";
-
+function showPetParentSignup() {
 
     document.getElementById(
-        "phoneLoginStep"
+        "petParentSignup"
     ).style.display = "block";
 
-
-    document.getElementById(
-        "petParentOTP"
-    ).value = "";
+    showLoginMessage("");
 
 }
 
 
-/* Message */
+/* =========================================
+   LOGIN MESSAGE
+========================================= */
 
 function showLoginMessage(message) {
 
-    document.getElementById(
-        "loginMessage"
-    ).textContent = message;
+    const element =
+        document.getElementById(
+            "loginMessage"
+        );
+
+    if (element) {
+
+        element.textContent = message;
+
+    }
 
 }
 
