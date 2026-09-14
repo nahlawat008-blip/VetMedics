@@ -836,13 +836,58 @@ Compassion With Care
         <h2>Pet Parent Login</h2>
 
         <p class="pet-login-subtitle">
-            Login to manage your pets and appointments
+            Login with your phone number and password
         </p>
 
+        <label>Mobile Number</label>
 
-        <!-- STEP 1 : MOBILE NUMBER -->
+        <div class="phone-input">
 
-        <div id="phoneLoginStep">
+            <span>+91</span>
+
+            <input
+                type="tel"
+                id="petParentPhone"
+                placeholder="Enter 10 digit mobile number"
+                maxlength="10"
+                inputmode="numeric">
+
+        </div>
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="petParentPassword"
+            placeholder="Enter password">
+
+        <button
+            class="pet-login-submit"
+            onclick="loginPetParent()">
+
+            Login
+
+        </button>
+
+        <p style="text-align:center; margin-top:15px;">
+            New Pet Parent?
+            <a href="#" onclick="showPetParentSignup(); return false;">
+                Create Account
+            </a>
+        </p>
+
+        <div id="petParentSignup" style="display:none;">
+
+            <hr>
+
+            <h3>Create Account</h3>
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                id="petParentName"
+                placeholder="Enter your name">
 
             <label>Mobile Number</label>
 
@@ -852,111 +897,35 @@ Compassion With Care
 
                 <input
                     type="tel"
-                    id="petParentPhone"
+                    id="signupPhone"
                     placeholder="Enter 10 digit mobile number"
                     maxlength="10"
-                    inputmode="numeric"
-                >
+                    inputmode="numeric">
 
             </div>
 
-            <button
-                class="pet-login-submit"
-                onclick="sendPetParentOTP()">
-
-                Send OTP
-
-            </button>
-
-        </div>
-
-
-        <!-- STEP 2 : OTP -->
-
-        <div id="otpLoginStep" style="display:none;">
-
-            <label>Enter OTP</label>
+            <label>Password</label>
 
             <input
-                type="text"
-                id="petParentOTP"
-                class="otp-input"
-                placeholder="Enter 6 digit OTP"
-                maxlength="6"
-                inputmode="numeric"
-            >
+                type="password"
+                id="signupPassword"
+                placeholder="Create password">
 
             <button
                 class="pet-login-submit"
-                onclick="verifyPetParentOTP()">
+                onclick="createPetParentAccount()">
 
-                Verify OTP
-
-            </button>
-
-            <button
-                class="change-number-btn"
-                onclick="changePetParentNumber()">
-
-                Change Number
+                Create Account
 
             </button>
 
         </div>
-
-        <!-- Firebase Recaptcha -->
-
-        <div id="recaptcha-container"></div>
 
         <p id="loginMessage" class="login-message"></p>
 
     </div>
 
 </div>
-
-   <!-- Firebase -->
-
-<script type="module">
-    import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-    import {
-        getAuth,
-        RecaptchaVerifier,
-        signInWithPhoneNumber
-    }
-    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
-
-    const firebaseConfig = {
-
-        apiKey: "YOUR_API_KEY",
-
-        authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-        projectId: "YOUR_PROJECT_ID",
-
-        storageBucket: "YOUR_PROJECT.firebasestorage.app",
-
-        messagingSenderId: "YOUR_SENDER_ID",
-
-        appId: "YOUR_APP_ID"
-
-    };
-
-
-    const app = initializeApp(firebaseConfig);
-
-    const auth = getAuth(app);
-
-    window.firebaseAuth = auth;
-
-    window.RecaptchaVerifier = RecaptchaVerifier;
-
-    window.signInWithPhoneNumber =
-        signInWithPhoneNumber;
-
-</script>
     
 <script src="js/script.js"></script>
 
