@@ -818,7 +818,7 @@ Compassion With Care
 
 </div>
 
-<!-- ================= PET PARENT LOGIN ================= -->
+   <!-- ================= PET PARENT LOGIN ================= -->
 
 <div id="petParentLoginModal" class="pet-modal">
 
@@ -833,93 +833,133 @@ Compassion With Care
             <i class="fas fa-user-circle"></i>
         </div>
 
-        <h2>Pet Parent Login</h2>
+        <!-- LOGIN SECTION -->
+        <div id="petParentLoginSection">
 
-        <p class="pet-login-subtitle">
-            Login with your phone number and password
-        </p>
+            <h2>Pet Parent Login</h2>
 
-        <label>Mobile Number</label>
+            <p class="pet-login-subtitle">
+                Login with your phone number and password
+            </p>
 
-        <div class="phone-input">
+            <div class="form-group">
+                <label>Mobile Number</label>
 
-            <span>+91</span>
+                <div class="phone-input">
+                    <span>+91</span>
 
-            <input
-                type="tel"
-                id="petParentPhone"
-                placeholder="Enter 10 digit mobile number"
-                maxlength="10"
-                inputmode="numeric">
+                    <input
+                        type="tel"
+                        id="petParentPhone"
+                        placeholder="Enter 10 digit mobile number"
+                        maxlength="10"
+                        inputmode="numeric">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="petParentPassword"
+                        placeholder="Enter password">
+
+                    <button type="button"
+                            onclick="togglePassword('petParentPassword', this)">
+                        👁
+                    </button>
+                </div>
+            </div>
+
+            <button
+                class="pet-login-submit"
+                onclick="loginPetParent()">
+                Login
+            </button>
+
+            <p class="create-account-text">
+                New Pet Parent?
+                <a href="#"
+                   onclick="showPetParentSignup(); return false;">
+                    Create Account
+                </a>
+            </p>
 
         </div>
 
-        <label>Password</label>
 
-        <input
-            type="password"
-            id="petParentPassword"
-            placeholder="Enter password">
-
-        <button
-            class="pet-login-submit"
-            onclick="loginPetParent()">
-
-            Login
-
-        </button>
-
-        <p style="text-align:center; margin-top:15px;">
-            New Pet Parent?
-            <a href="#" onclick="showPetParentSignup(); return false;">
-                Create Account
-            </a>
-        </p>
-
+        <!-- CREATE ACCOUNT SECTION -->
         <div id="petParentSignup" style="display:none;">
-
-            <hr>
 
             <h3>Create Account</h3>
 
-            <label>Name</label>
+            <p class="pet-login-subtitle">
+                Create your Pet Parent account
+            </p>
 
-            <input
-                type="text"
-                id="petParentName"
-                placeholder="Enter your name">
-
-            <label>Mobile Number</label>
-
-            <div class="phone-input">
-
-                <span>+91</span>
+            <div class="form-group">
+                <label>Name</label>
 
                 <input
-                    type="tel"
-                    id="signupPhone"
-                    placeholder="Enter 10 digit mobile number"
-                    maxlength="10"
-                    inputmode="numeric">
-
+                    class="pet-form-input"
+                    type="text"
+                    id="petParentName"
+                    placeholder="Enter your name">
             </div>
 
-            <label>Password</label>
 
-            <input
-                type="password"
-                id="signupPassword"
-                placeholder="Create password">
+            <div class="form-group">
+                <label>Mobile Number</label>
+
+                <div class="phone-input">
+                    <span>+91</span>
+
+                    <input
+                        type="tel"
+                        id="signupPhone"
+                        placeholder="Enter 10 digit mobile number"
+                        maxlength="10"
+                        inputmode="numeric">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Password</label>
+
+                <div class="password-input">
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder="Create password">
+
+                    <button type="button"
+                            onclick="togglePassword('signupPassword', this)">
+                        👁
+                    </button>
+                </div>
+            </div>
+
 
             <button
                 class="pet-login-submit"
                 onclick="createPetParentAccount()">
-
                 Create Account
-
             </button>
 
+
+            <p class="back-login-text">
+                Already have an account?
+                <a href="#"
+                   onclick="showPetParentLogin(); return false;">
+                    Login
+                </a>
+            </p>
+
         </div>
+
 
         <p id="loginMessage" class="login-message"></p>
 
