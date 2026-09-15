@@ -998,10 +998,6 @@ function showPetParentLogin() {
 function showPetParentSignup() {
 
     document.getElementById(
-        "petParentLoginSection"
-    ).style.display = "none";
-
-    document.getElementById(
         "petParentSignup"
     ).style.display = "block";
 
