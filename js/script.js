@@ -1032,30 +1032,6 @@ function showLoginMessage(message) {
 }
 
 /* =========================================
-   TOGGLE PASSWORD
-========================================= */
-
-function togglePassword(inputId, button) {
-
-    const input = document.getElementById(inputId);
-
-    if (input.type === "password") {
-
-        input.type = "text";
-
-        button.textContent = "🙈";
-
-    } else {
-
-        input.type = "password";
-
-        button.textContent = "👁";
-
-    }
-
-}
-
-/* =========================================
    PET PARENT DASHBOARD
 ========================================= */
 
