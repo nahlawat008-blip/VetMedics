@@ -1399,32 +1399,45 @@ function loadPets(data) {
 
             return `
 
-                <div class="pet-card">
+    <div class="pet-card">
 
-                    <div class="pet-avatar">
-                        ${icon}
-                    </div>
+        <div class="pet-avatar">
+            ${icon}
+        </div>
 
-                    <div>
+        <div style="flex:1;">
 
-                        <h4>
-                            ${pet.name}
-                        </h4>
+            <h4>
+                ${pet.name}
+            </h4>
 
-                        <p>
-                            ${pet.type} • ${pet.breed}
-                        </p>
+            <p>
+                ${pet.type} • ${pet.breed}
+            </p>
 
-                        <p>
-                            ${pet.age} years •
-                            ${pet.gender}
-                        </p>
+            <p>
+                ${pet.age} years •
+                ${pet.gender}
+            </p>
 
-                    </div>
+            <button
+                onclick="deletePet(${pet.id})"
+                style="
+                    margin-top:10px;
+                    padding:7px 12px;
+                    border:none;
+                    border-radius:6px;
+                    cursor:pointer;
+                "
+            >
+                🗑️ Delete Pet
+            </button>
 
-                </div>
+        </div>
 
-            `;
+    </div>
+
+`;
 
         }).join("");
 
