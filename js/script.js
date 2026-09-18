@@ -1613,3 +1613,53 @@ function loadAppointments(data) {
         }).join("");
 
 }
+
+async function loadOnlineAppointments() {
+
+    const phone =
+        localStorage.getItem("vetMedicsPhone");
+
+    if (!phone) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            GOOGLE_SCRIPT_URL +
+            "?action=getAppointments&phone=" +
+            encodeURIComponent(phone)
+        );
+
+        const result = await response.json();
+
+        if (!result.success) {
+            return;
+        }
+
+        const data = getPetParentData();
+
+        if (!data) {
+            return;
+        }
+
+        data.appointments = result.appointments || [];
+
+        savePetParentData(data);
+
+        loadAppointments(data);
+
+        document.getElementById(
+            "totalAppointments"
+        ).textContent =
+            data.appointments.length;
+
+    } catch (error) {
+
+        console.error(
+            "Appointment loading error:",
+            error
+        );
+
+    }
+}
