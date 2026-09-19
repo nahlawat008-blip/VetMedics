@@ -1263,8 +1263,8 @@ color:#0F9D8A;
 }
 
 .logo img{
-    width:44px !important;
-    height:44px !important;
+    width:60px !important;
+    height:60px !important;
 }
 
 .logo h2{
@@ -1476,8 +1476,8 @@ footer{
     }
 
     .logo img{
-        width:42px !important;
-        height:42px !important;
+        width:60px !important;
+        height:60px !important;
     }
 
     .logo h2{
@@ -1524,8 +1524,8 @@ footer{
     }
 
     .logo img{
-        width:38px !important;
-        height:38px !important;
+        width:55px !important;
+        height:55px !important;
     }
 
     .logo h2{
@@ -1708,8 +1708,8 @@ footer{
 @media(max-width:480px){
 
     .logo img{
-        width:35px !important;
-        height:35px !important;
+        width:50px !important;
+        height:50px !important;
     }
 
     .logo h2{
