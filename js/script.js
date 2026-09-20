@@ -563,7 +563,8 @@ function showHomeVisitDetails(type) {
 
             <ul>
                 <li>Veterinary consultation at your home</li>
-                <li>Basic clinical examination</li>
+                <li>Advanced clinical examination</li>
+                <li>Advanced Diagnostics</li>
                 <li>Discussion of your pet's health concerns</li>
                 <li>Medication and care guidance</li>
                 <li>Further treatment recommendations if required</li>
@@ -586,32 +587,31 @@ function showHomeVisitDetails(type) {
     }
 
 
-    // HOME VACCINATION VISIT
+    // HEALTH AND TRAVEL CERTIFICATE
 
-    else if (type === "vaccination") {
+    else if (type === "certificate") {
 
         html = `
-            <h2>💉 Home Vaccination Visit</h2>
+            <h2>💉 Health And Travel Certificate</h2>
 
             <h3>Service Includes</h3>
 
             <ul>
                 <li>Veterinary visit at your doorstep</li>
-                <li>Pre-vaccination health assessment</li>
-                <li>Vaccination as recommended</li>
-                <li>Vaccination record update</li>
-                <li>Post-vaccination guidance</li>
+                <li>Vaccination status verification</li>
+                <li>Digital/Printed Certificate</li>
+                <li>Certificate issued after clinical examination</li>
             </ul>
 
             <h3>Suitable For</h3>
 
             <p>
-                Pet owners who prefer to get their pet vaccinated
-                conveniently at home.
+                Provide valid Health and Travel Certificate for 
+                Domestic/International Travel,Boarding.
             </p>
 
             <div class="package-price">
-                Price: ₹____
+                Price: ₹699
             </div>
         `;
 
