@@ -43,7 +43,7 @@ cards.forEach(card => {
 const whatsapp = document.createElement("a");
 whatsapp.href = "https://wa.me/919772333320";
 whatsapp.target = "_blank";
-whatsapp.innerHTML = "💬";
+WhatsApp.innerHTML = '<i class="fa-brands fa-whatsapp"></i>';
 whatsapp.className = "floating-whatsapp";
 
 document.body.appendChild(whatsapp);
