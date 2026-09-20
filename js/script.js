@@ -583,10 +583,9 @@ function showHomeVisitDetails(type) {
            
             </div>
 
-            <button class="book-now-btn"
-        onclick="closeHomeVisitDetails(); document.getElementById('appointment').scrollIntoView({behavior:'smooth'});">
+           <a href="appointment.html" class="book-now-btn">
     Book Now
-</button>
+</a>
          `;
 
     }
@@ -619,10 +618,9 @@ function showHomeVisitDetails(type) {
                 Price: ₹699
             </div>
 
-            <button class="book-now-btn"
-        onclick="closeHomeVisitDetails(); document.getElementById('appointment').scrollIntoView({behavior:'smooth'});">
+            <a href="appointment.html" class="book-now-btn">
     Book Now
-</button>
+</a>
         `;
 
     }
