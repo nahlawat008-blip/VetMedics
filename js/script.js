@@ -41,7 +41,7 @@ cards.forEach(card => {
 
 // Floating WhatsApp Button
 const whatsapp = document.createElement("a");
-whatsapp.href = "https://wa.me/919817040859";
+whatsapp.href = "https://wa.me/919772333320";
 whatsapp.target = "_blank";
 whatsapp.innerHTML = "💬";
 whatsapp.className = "floating-whatsapp";
@@ -196,7 +196,7 @@ function showPackageDetails(packageType) {
             </p>
 
             <div class="package-price">
-                Starting from ₹____
+                Starting from ₹3999
             </div>
 
             <a href="#appointment"
@@ -231,7 +231,7 @@ function showPackageDetails(packageType) {
             </p>
 
             <div class="package-price">
-                Starting from ₹____
+                Starting from ₹1599
             </div>
 
             <a href="#appointment"
@@ -266,7 +266,7 @@ function showPackageDetails(packageType) {
             </p>
 
             <div class="package-price">
-                Starting from ₹____
+                Starting from ₹4399
             </div>
 
             <a href="#appointment"
@@ -301,7 +301,7 @@ function showPackageDetails(packageType) {
             </p>
 
             <div class="package-price">
-                Starting from ₹____
+                Starting from ₹1799
             </div>
 
             <a href="#appointment"
@@ -408,7 +408,7 @@ function showTeleconsultationDetails(type) {
             </p>
 
             <div class="package-price">
-                Price: ₹____
+                Price: ₹199
             </div>
         `;
 
@@ -438,7 +438,7 @@ function showTeleconsultationDetails(type) {
             </p>
 
             <div class="package-price">
-                Price: ₹____
+                Price: ₹99
             </div>
         `;
 
@@ -453,7 +453,7 @@ function showTeleconsultationDetails(type) {
             <h3>Consultation Includes</h3>
 
             <ul>
-                <li>Follow-up with the veterinarian</li>
+                <li>Follow-up with the veterinarian within 3 days</li>
                 <li>Review of treatment progress</li>
                 <li>Discussion of recovery</li>
                 <li>Medication guidance</li>
@@ -468,7 +468,7 @@ function showTeleconsultationDetails(type) {
             </p>
 
             <div class="package-price">
-                Price: ₹____
+                Price: ₹0
             </div>
         `;
 
@@ -577,7 +577,9 @@ function showHomeVisitDetails(type) {
             </p>
 
             <div class="package-price">
-                Price: ₹____
+           Consultaion Charges : ₹699 (Upto 8PM)
+           Emergency Charges : ₹999 (8PM-8AM)
+           
             </div>
         `;
 
