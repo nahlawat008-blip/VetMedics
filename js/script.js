@@ -199,11 +199,9 @@ function showPackageDetails(packageType) {
                 Starting from ₹3999
             </div>
 
-            <a href="#appointment"
-               class="book-package-btn"
-               onclick="closePackageDetails()">
-                Book This Package
-            </a>
+        <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a>
         `;
 
     }
@@ -234,11 +232,9 @@ function showPackageDetails(packageType) {
                 Starting from ₹1599
             </div>
 
-            <a href="#appointment"
-               class="book-package-btn"
-               onclick="closePackageDetails()">
-                Book This Package
-            </a>
+         <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a>
         `;
 
     }
@@ -269,11 +265,9 @@ function showPackageDetails(packageType) {
                 Starting from ₹4399
             </div>
 
-            <a href="#appointment"
-               class="book-package-btn"
-               onclick="closePackageDetails()">
-                Book This Package
-            </a>
+        <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a>
         `;
 
     }
@@ -304,11 +298,9 @@ function showPackageDetails(packageType) {
                 Starting from ₹1799
             </div>
 
-            <a href="#appointment"
-               class="book-package-btn"
-               onclick="closePackageDetails()">
-                Book This Package
-            </a>
+        <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a> 
         `;
 
     }
