@@ -2911,16 +2911,18 @@ footer{
         margin-bottom:8px;
     }
 
-    .nav-links{
-        width:auto;
-        flex:none;
-        display:flex !important;
-        flex-wrap:nowrap;
-        justify-content:center;
-        gap:12px;
-        overflow-x:auto;
-        padding:4px 0;
-    }
+   .nav-links{
+    width:100%;
+    flex:none;
+    display:flex !important;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    align-items:center;
+    gap:10px;
+    overflow-x:auto;
+    white-space:nowrap;
+    padding:4px 0;
+} 
 
     .nav-links a{
         font-size:12px;
@@ -2928,14 +2930,15 @@ footer{
     }
 
     .pet-parent-location{
-        width:100%;
-        border-left:none;
-        border-top:1px solid #eee;
-        padding:8px 0 0;
-        margin:4px 0 0;
-        flex-direction:row;
-        gap:12px;
-    }
+    width:auto;
+    border-left:none;
+    border-top:none;
+    padding:0;
+    margin:0;
+    flex-direction:row;
+    gap:12px;
+    flex-shrink:0;
+}
 
     .pet-parent-place{
         margin-top:0;
