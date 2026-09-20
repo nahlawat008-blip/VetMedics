@@ -2823,3 +2823,109 @@ footer{
   }
 }
 
+/* =========================
+   PET PARENT + LOCATION FIX
+========================= */
+
+.nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.nav-links{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+}
+
+.pet-parent-location{
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    white-space:nowrap;
+    margin-left:auto;
+    padding-left:18px;
+    border-left:1px solid #ddd;
+}
+
+.pet-parent-login-btn{
+    border:none;
+    background:none;
+    color:#4B2E83;
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    padding:0;
+}
+
+.pet-parent-place{
+    font-size:13px;
+    color:#0F9D8A;
+    font-weight:500;
+    margin-top:3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    header .container{
+        width:100%;
+        padding:10px 12px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .logo{
+        width:100%;
+        justify-content:center;
+        margin-bottom:8px;
+    }
+
+    .nav-links{
+        width:auto;
+        flex:none;
+        display:flex !important;
+        flex-wrap:nowrap;
+        justify-content:center;
+        gap:12px;
+        overflow-x:auto;
+        padding:4px 0;
+    }
+
+    .nav-links a{
+        font-size:12px;
+        white-space:nowrap;
+    }
+
+    .pet-parent-location{
+        width:100%;
+        border-left:none;
+        border-top:1px solid #eee;
+        padding:8px 0 0;
+        margin:4px 0 0;
+        flex-direction:row;
+        gap:12px;
+    }
+
+    .pet-parent-place{
+        margin-top:0;
+        font-size:12px;
+    }
+
+    .pet-parent-login-btn{
+        font-size:13px;
+    }
+
+}
