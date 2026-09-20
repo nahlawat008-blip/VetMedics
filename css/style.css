@@ -1146,6 +1146,24 @@ color:#0F9D8A;
     color: #16A34A;
 }
 
+.book-now-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 28px;
+    background: #16A34A;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-now-btn:hover {
+    background: #12813b;
+    transform: translateY(-2px);
+}
 
 /* Details Modal */
 
