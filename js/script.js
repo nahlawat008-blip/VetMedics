@@ -582,7 +582,12 @@ function showHomeVisitDetails(type) {
            Emergency Charges : ₹999 (8PM-8AM)
            
             </div>
-        `;
+
+            <button class="book-now-btn"
+        onclick="closeHomeVisitDetails(); document.getElementById('appointment').scrollIntoView({behavior:'smooth'});">
+    Book Now
+</button>
+         `;
 
     }
 
@@ -613,6 +618,11 @@ function showHomeVisitDetails(type) {
             <div class="package-price">
                 Price: ₹699
             </div>
+
+            <button class="book-now-btn"
+        onclick="closeHomeVisitDetails(); document.getElementById('appointment').scrollIntoView({behavior:'smooth'});">
+    Book Now
+</button>
         `;
 
     }
