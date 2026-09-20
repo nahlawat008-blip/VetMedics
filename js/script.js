@@ -410,6 +410,10 @@ function showTeleconsultationDetails(type) {
             <div class="package-price">
                 Price: ₹199
             </div>
+
+           <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a> 
         `;
 
     }
@@ -440,6 +444,10 @@ function showTeleconsultationDetails(type) {
             <div class="package-price">
                 Price: ₹99
             </div>
+
+<a href="appointment.html" class="book-now-btn">
+    Book Now
+</a>
         `;
 
     }
@@ -470,6 +478,10 @@ function showTeleconsultationDetails(type) {
             <div class="package-price">
                 Price: ₹0
             </div>
+
+      <a href="appointment.html" class="book-now-btn">
+    Book Now
+</a>      
         `;
 
     }
