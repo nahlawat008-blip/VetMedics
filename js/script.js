@@ -1,5 +1,5 @@
 const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwqckWul5n5XN9cse1GKvZfymCJ70GttLYaxD6LStlfRrsJoLVN198kp_hPU9vZzv4ctg/exec";
+ "https://script.google.com/macros/s/AKfycbyLaN99wyJ51prbdGuVb-iM-kmpaJG2pO69hqSl-S9lxpnf6wC8xuc3Vh6JLWgmcO4JMw/exec";
 
 // =========================
 // Vet Medics Pet Clinic
