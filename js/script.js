@@ -1499,6 +1499,47 @@ function loadPets(data) {
 
 }
 
+/* =========================================
+   DELETE PET
+========================================= */
+
+function deletePet(petId) {
+
+    const data = getPetParentData();
+
+    if (!data) {
+        alert("Please login first.");
+        return;
+    }
+
+    const pet = data.pets.find(function(p) {
+        return p.id === petId;
+    });
+
+    if (!pet) {
+        alert("Pet not found.");
+        return;
+    }
+
+    const confirmDelete = confirm(
+        "Are you sure you want to delete " + pet.name + "?"
+    );
+
+    if (!confirmDelete) {
+        return;
+    }
+
+    data.pets = data.pets.filter(function(p) {
+        return p.id !== petId;
+    });
+
+    savePetParentData(data);
+
+    loadPetParentData();
+
+    alert("Pet deleted successfully.");
+}
+
 async function loadOnlineAppointments() {
 
     const phone =
