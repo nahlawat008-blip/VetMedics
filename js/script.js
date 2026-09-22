@@ -839,21 +839,32 @@ async function createPetParentAccount() {
             await response.json();
 
 
-        if (result.success) {
+if (result.success) {
 
-            showLoginMessage(
-                "Account created successfully. Please login."
-            );
+    const message =
+        document.getElementById("signupMessage");
 
-            document.getElementById(
-                "petParentSignup"
-            ).style.display = "none";
+    if (message) {
+        message.textContent =
+            "Account created successfully. Please login.";
+    }
 
-        } else {
+    document.getElementById(
+        "petParentSignupModal"
+    ).style.display = "none";
 
-            showLoginMessage(
-                result.message
-            );
+    document.getElementById(
+        "petParentLoginModal"
+    ).style.display = "flex";
+
+}
+
+         else {
+
+            if (signupMessage) {
+    signupMessage.textContent =
+        result.message;
+}
 
         }
 
