@@ -1015,10 +1015,40 @@ function showPetParentLogin() {
 function showPetParentSignup() {
 
     document.getElementById(
-        "petParentSignup"
-    ).style.display = "block";
+        "petParentLoginModal"
+    ).style.display = "none";
 
-    showLoginMessage("");
+    document.getElementById(
+        "petParentSignupModal"
+    ).style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+}
+
+function closePetParentSignup() {
+
+    document.getElementById(
+        "petParentSignupModal"
+    ).style.display = "none";
+
+    document.body.style.overflow = "auto";
+
+}
+
+function backToPetParentLogin() {
+
+    // Close signup
+    document.getElementById(
+        "petParentSignupModal"
+    ).style.display = "none";
+
+    // Open login
+    document.getElementById(
+        "petParentLoginModal"
+    ).style.display = "flex";
+
+    document.body.style.overflow = "hidden";
 
 }
 
