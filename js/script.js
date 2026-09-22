@@ -1102,9 +1102,14 @@ function openPetDashboard() {
     }
 
 
-    document.getElementById(
-        "dashboardParentPhone"
-    ).textContent = phone;
+   const parentName =
+    localStorage.getItem(
+        "vetMedicsParentName"
+    );
+
+document.getElementById(
+    "dashboardParentPhone"
+).textContent = parentName || phone;
 
 
     document.getElementById(
