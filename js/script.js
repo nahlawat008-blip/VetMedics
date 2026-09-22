@@ -807,9 +807,13 @@ async function createPetParentAccount() {
     }
 
 
-    showLoginMessage(
-        "Creating account..."
-    );
+    const signupMessage =
+    document.getElementById("signupMessage");
+
+if (signupMessage) {
+    signupMessage.textContent =
+        "Creating account...";
+}
 
 
     try {
@@ -841,21 +845,10 @@ async function createPetParentAccount() {
 
 if (result.success) {
 
-    const message =
-        document.getElementById("signupMessage");
-
-    if (message) {
-        message.textContent =
+    if (signupMessage) {
+        signupMessage.textContent =
             "Account created successfully. Please login.";
     }
-
-    document.getElementById(
-        "petParentSignupModal"
-    ).style.display = "none";
-
-    document.getElementById(
-        "petParentLoginModal"
-    ).style.display = "flex";
 
 }
 
