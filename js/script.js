@@ -1005,8 +1005,14 @@ function showPetParentLogin() {
     ).style.display = "block";
 
     document.getElementById(
-        "petParentSignup"
+        "petParentLoginModal"
+    ).style.display = "flex";
+
+    document.getElementById(
+        "petParentSignupModal"
     ).style.display = "none";
+
+    document.body.style.overflow = "hidden";
 
     showLoginMessage("");
 
