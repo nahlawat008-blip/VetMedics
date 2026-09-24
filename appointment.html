@@ -378,10 +378,7 @@
     </select>
 
 </div>
-                        
-</div>
-
-                    
+    
                     <div class="form-group">
 
                         <label for="serviceType">
@@ -529,6 +526,88 @@ const homeVisitOptions =
 const homeVisitType =
     document.getElementById("homeVisitType");
 
+const petType =
+    document.getElementById("petType");
+
+const breedGroup =
+    document.getElementById("breedGroup");
+
+const petBreed =
+    document.getElementById("petBreed");
+
+const dogBreeds = [
+    "Labrador Retriever",
+    "Golden Retriever",
+    "German Shepherd",
+    "Beagle",
+    "Pug",
+    "Rottweiler",
+    "Shih Tzu",
+    "Pomeranian",
+    "Cocker Spaniel",
+    "Indian Pariah",
+    "American Bully"
+    "Other"
+];
+
+const catBreeds = [
+    "Persian",
+    "Siamese",
+    "Maine Coon",
+    "British Shorthair",
+    "Ragdoll",
+    "Bengal",
+    "Indian Domestic",
+    "Other"
+];
+
+petType.addEventListener("change", function () {
+
+    petBreed.innerHTML =
+        '<option value="">Select Breed</option>';
+
+    let breeds = [];
+
+    if (
+        this.value === "Dog" ||
+        this.value === "Puppy"
+    ) {
+        breeds = dogBreeds;
+    }
+
+    if (
+        this.value === "Cat" ||
+        this.value === "Kitten"
+    ) {
+        breeds = catBreeds;
+    }
+
+    if (breeds.length > 0) {
+
+        breedGroup.style.display = "block";
+        petBreed.required = true;
+
+        breeds.forEach(function (breed) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = breed;
+            option.textContent = breed;
+
+            petBreed.appendChild(option);
+
+        });
+
+    } else {
+
+        breedGroup.style.display = "none";
+        petBreed.required = false;
+        petBreed.value = "";
+
+    }
+
+});    
 
 serviceType.addEventListener("change", function () {
 
